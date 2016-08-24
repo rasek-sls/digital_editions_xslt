@@ -42,7 +42,7 @@ This is a parland custom xsl file
             <xsl:text>tei_add_in_add</xsl:text>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:text>tei_add_over</xsl:text>
+            <xsl:text>tei_add_over_hps</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
         <xsl:call-template name="mediumClass" />
