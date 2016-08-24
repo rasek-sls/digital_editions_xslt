@@ -437,7 +437,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   
   <xsl:template match="tei:note">
     <xsl:variable name="handen" select="translate(@hand, '#', '')" />
-    <xsl:if test="contains(@type, 'editor')">
+    <xsl:if test="@type='editor'">
       <img src="images/asterix.png">
         <!--<xsl:attribute name="onmouseover">
           <xsl:text>Tip("</xsl:text>
