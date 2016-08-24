@@ -18,7 +18,7 @@ This is a parland custom xsl file
         <xsl:choose>
           <xsl:when test="parent::tei:subst">
             <xsl:choose>
-              <xsl:when test="ancestor::tei:p[@rend='noIdent']">
+              <xsl:when test="ancestor::tei:p[@rend='noIndent']">
                 <xsl:text>tei_add_subst_noindent_hps</xsl:text>
               </xsl:when>
               <xsl:otherwise>
