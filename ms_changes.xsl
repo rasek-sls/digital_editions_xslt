@@ -8,7 +8,7 @@ email: seesharp@witchmastercreations.com or mikael.norrgard@gmail.com
 
 Rights to use and further develop given to Svenska litteratursällskapet i Finland.
 -->
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.sls.fi/tei">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.tei-c.org/ns/1.0">
 
   <xsl:include href="custom.xsl"/>
 
