@@ -50,7 +50,6 @@ This is a parland custom xsl file
           <xsl:text> editorial tooltiptrigger ttMs</xsl:text>
         </xsl:if>
       </xsl:attribute>
-      <xsl:call-template name="handSymbol"/>
       <xsl:call-template name="sofortSymbol"/>
       <!--<xsl:call-template name="marginAnchorSymbol"/>-->
       <xsl:call-template name="marginAddSymbol"/>
