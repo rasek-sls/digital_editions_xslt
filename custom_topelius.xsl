@@ -10,7 +10,7 @@ This is a topelius custom xsl file
       <xsl:when test="not(descendant::tei:del)">
         <span class="symbol_red">|</span><span>
           <xsl:attribute name="class">
-            <xsl:text>substitution</xsl:text>
+            <xsl:text>tei_substitution_zts</xsl:text>
             <xsl:call-template name="mediumClass"/>
           </xsl:attribute>
           <xsl:apply-templates/>
@@ -34,7 +34,7 @@ This is a topelius custom xsl file
       <xsl:attribute name="class">
         <xsl:choose>
           <xsl:when test="parent::tei:subst">
-            <xsl:text>add_subst</xsl:text>
+            <xsl:text>tei_add_subst_zts</xsl:text>
           </xsl:when>
           <xsl:when test="@reason='choice'">
             <xsl:text>add_choice</xsl:text>
@@ -80,10 +80,10 @@ This is a topelius custom xsl file
       <xsl:attribute name="class">
         <xsl:choose>
           <xsl:when test="parent::tei:subst">
-            <xsl:text>deletion_subst</xsl:text>
+            <xsl:text>tei_deletion_subst</xsl:text>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:text>deletion</xsl:text>
+            <xsl:text>tei_deletion</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
         <xsl:call-template name="mediumClass" />
