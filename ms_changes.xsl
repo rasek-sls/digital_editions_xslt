@@ -10,6 +10,8 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
 -->
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tei="http://www.sls.fi/tei">
 
+  <xsl:include href="custom.xsl"/>
+
   <xsl:include href="inc_ms.xsl"/>
 
   <xsl:param name="bookId" />
