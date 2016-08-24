@@ -692,10 +692,12 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
   <xsl:template name="mediumTooltip">
+    <xsl:param name="hand" />
     <xsl:if test="@medium">
       <span class="tooltip">
         <xsl:call-template name="inks">
           <xsl:with-param name="ink" select="@medium"/>
+          <xsl:with-param name="attHand" select="$hand"/>
         </xsl:call-template>
       </span>
     </xsl:if>
@@ -1016,7 +1018,16 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
 
   <xsl:template name="inks">
     <xsl:param name="ink"/>
-    <xsl:text>med annan penna: </xsl:text>
+    <xsl:param name="attHand"/>
+    <xsl:choose>
+      <xsl:when test="string-length($attHand)&gt;0">
+        <xsl:value-of select="//tei:handNote[@id=$attHand]"/>
+        <xsl:text>: </xsl:text>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:text>med annan penna: </xsl:text>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:choose>
       <xsl:when test="$ink='black-ink'">
         <xsl:text>svart bläck</xsl:text>
