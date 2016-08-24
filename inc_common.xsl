@@ -476,6 +476,14 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
         </span>
       </span>
     </xsl:if>
+    <xsl:if test="contains(@type, 'editorial')">
+      <span>
+        <xsl:attribute name="class">
+          <xsl:text>editorial tooltiptrigger ttMs</xsl:text>
+        </xsl:attribute>
+        <xsl:apply-templates />
+      </span>
+    </xsl:if>
   </xsl:template>
   
   <xsl:template name="listFootnotes">
