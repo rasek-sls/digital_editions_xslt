@@ -415,17 +415,116 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       </span>
 
       <xsl:choose>
-        <xsl:when test="@xml:lang">
-          <span class="foreign tooltiptrigger ttLang">
-            <xsl:attribute name="lang">
-              <xsl:value-of select="@xml:lang"/>
-            </xsl:attribute>
-            <xsl:apply-templates/>
-          </span>
-          <xsl:call-template name="xmlLang"/>
+        <xsl:when test="preceding::tei:addSpan[@subtype='revision']">
+          <xsl:variable name="addSpanId1" select="substring(preceding::tei:addSpan[@subtype='revision'][1]/@spanTo, 2)" />
+          <xsl:variable name="addSpanId2" select="substring(preceding::tei:addSpan[@subtype='revision'][2]/@spanTo, 2)" />
+          <xsl:choose>
+            <xsl:when test="following::tei:anchor[@id=$addSpanId1] or following::tei:anchor[@id=$addSpanId2]">
+              <span class="revision tooltiptrigger ttFoot">
+               <xsl:text>Repetition</xsl:text> 
+              </span>
+              <span class="tooltip ttFoot">
+                <span class="ttFixed">
+                  <xsl:apply-templates/>
+                </span>
+              </span>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:choose>
+                <xsl:when test="preceding::tei:addSpan[@subtype='keyword']">
+                  <xsl:variable name="addSpanId3" select="substring(preceding::tei:addSpan[@subtype='keyword'][1]/@spanTo, 2)" />
+                  <xsl:variable name="addSpanId4" select="substring(preceding::tei:addSpan[@subtype='keyword'][2]/@spanTo, 2)" />
+                  <xsl:choose>
+                    <xsl:when test="following::tei:anchor[@id=$addSpanId3] or following::tei:anchor[@id=$addSpanId4]">
+                      <span class="tooltiptrigger ttFoot">
+                        <img src="images/keyword_symbol.gif" /> 
+                      </span>
+                      <span class="tooltip ttFoot">
+                        <span class="ttFixed">
+                          <xsl:apply-templates/>
+                        </span>
+                      </span>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:apply-templates />
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:when>
+                <xsl:otherwise>
+                  
+                  <xsl:choose>
+                    <xsl:when test="@xml:lang">
+                      <span class="foreign tooltiptrigger ttLang">
+                        <xsl:attribute name="lang">
+                          <xsl:value-of select="@xml:lang"/>
+                        </xsl:attribute>
+                        <xsl:apply-templates/>
+                      </span>
+                      <xsl:call-template name="xmlLang"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:apply-templates />
+                    </xsl:otherwise>
+                  </xsl:choose>
+                  
+                  
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:apply-templates/>
+          <xsl:choose>
+            <xsl:when test="preceding::tei:addSpan[@subtype='keyword']">
+              <xsl:variable name="addSpanId1" select="substring(preceding::tei:addSpan[@subtype='keyword'][1]/@spanTo, 2)" />
+              <xsl:variable name="addSpanId2" select="substring(preceding::tei:addSpan[@subtype='keyword'][2]/@spanTo, 2)" />
+              <xsl:choose>
+                <xsl:when test="following::tei:anchor[@id=$addSpanId1] or following::tei:anchor[@id=$addSpanId2]">
+                  <span class="tooltiptrigger ttFoot">
+                    <img src="images/keyword_symbol.gif" />
+                  </span>
+                  <span class="tooltip ttFoot">
+                    <span class="ttFixed">
+                      <xsl:apply-templates/>
+                    </span>
+                  </span>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:choose>
+                    <xsl:when test="@xml:lang">
+                      <span class="foreign tooltiptrigger ttLang">
+                        <xsl:attribute name="lang">
+                          <xsl:value-of select="@xml:lang"/>
+                        </xsl:attribute>
+                        <xsl:apply-templates/>
+                      </span>
+                      <xsl:call-template name="xmlLang"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                      <xsl:apply-templates />
+                    </xsl:otherwise>
+                  </xsl:choose>
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:choose>
+                <xsl:when test="@xml:lang">
+                  <span class="foreign tooltiptrigger ttLang">
+                    <xsl:attribute name="lang">
+                      <xsl:value-of select="@xml:lang"/>
+                    </xsl:attribute>
+                    <xsl:apply-templates/>
+                  </span>
+                  <xsl:call-template name="xmlLang"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:apply-templates />
+                </xsl:otherwise>
+              </xsl:choose>
+            </xsl:otherwise>
+          </xsl:choose>
+          
         </xsl:otherwise>
       </xsl:choose>
 
@@ -631,7 +730,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <img src="images/squared_times_gray.png"/>
         </span>
         <span class="tooltip ttChanges">
-          <xsl:text>Rättelse i originalet</xsl:text>
+          <xsl:text>rättelse i originalet</xsl:text>
         </span>
       </xsl:when>
       <xsl:when test="@source='Rättelser'">
@@ -642,7 +741,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:apply-templates/>
         </span>
         <span class="tooltip ttChanges">
-          <xsl:text>Rättelse i originalet</xsl:text>
+          <xsl:text>rättelse i originalet</xsl:text>
         </span>
       </xsl:when>
       <xsl:otherwise>
@@ -883,7 +982,31 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     <xsl:choose>
       <xsl:when test="@hand"/>
       <xsl:otherwise>
-        <xsl:apply-templates />
+        <xsl:choose>
+          <xsl:when test="@subtype='revision'">
+            <span class="revision tooltiptrigger ttFoot">
+              <xsl:text>Repetition</xsl:text> 
+            </span>
+            <span class="tooltip ttFoot">
+              <span class="ttFixed">
+                <xsl:apply-templates/>
+              </span>
+            </span>
+          </xsl:when>
+          <xsl:when test="@subtype='keyword'">
+            <span class="tooltiptrigger ttFoot">
+              <img src="images/keyword_symbol.gif" /> 
+            </span>
+            <span class="tooltip ttFoot">
+              <span class="ttFixed">
+                <xsl:apply-templates/>
+              </span>
+            </span>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:apply-templates />
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
