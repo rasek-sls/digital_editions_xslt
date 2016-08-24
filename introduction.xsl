@@ -248,11 +248,7 @@
 
   <xsl:template match="tei:title">
     <span>
-      <xsl:call-template name="attRend">
-        <xsl:with-param name="defaultClasses">
-          <xsl:text>title</xsl:text>
-        </xsl:with-param>
-      </xsl:call-template>
+      <xsl:call-template name="attRend"/>
       <xsl:apply-templates/>
     </span>
   </xsl:template>
@@ -264,13 +260,15 @@
   </xsl:template>
 
   <xsl:template match="tei:placeName">
-    <span class="placeName">
+    <span>
+      <xsl:call-template name="attRend"/>
       <xsl:apply-templates/>
     </span>
   </xsl:template>
 
   <xsl:template match="tei:persName">
-    <span class="person target15 hideTitle">
+    <span>
+      <xsl:call-template name="attRend"/>
       <xsl:apply-templates/>
     </span>
   </xsl:template>

@@ -38,7 +38,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   <xsl:template match="tei:div">
     <xsl:if test="@type='poem' and @part='y'">
       <p class="noIndent">
-        <span class="symbol_red">[Oavslutat manuskript]</span>
+        <span class="symbol_red">[oavslutat manuskript]</span>
       </p>
     </xsl:if>
     <xsl:if test="@type='letterpart' and @part='f'">
@@ -141,7 +141,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:text> </xsl:text>
       <!--<span class="symbol_red" onmouseover="Tip('Ofullständig versrad')">...</span>-->
       <span class="symbol_red tooltiptrigger ttMs">...</span>
-      <span class="tooltip">Ofullständig versrad</span>
+      <span class="tooltip">ofullständig versrad</span>
     </xsl:if>
 
     <xsl:choose>
