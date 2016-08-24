@@ -579,13 +579,42 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
   <xsl:template match="tei:figure">
-    <img class="tei_bar">
-      <xsl:attribute name="src">
-        <xsl:text>images/figures/</xsl:text>
-        <xsl:value-of select="@type"/>
-        <xsl:text>.png</xsl:text>
-      </xsl:attribute>
-    </img>
+    <xsl:variable name="attHand" select="translate(@hand, '#', '')" />
+    <xsl:choose>
+      <xsl:when test="@type">
+        <img class="tei_bar">
+          <xsl:attribute name="src">
+            <xsl:text>images/figures/</xsl:text>
+            <xsl:value-of select="@type" />
+            <xsl:text>.png</xsl:text>
+          </xsl:attribute>
+        </img>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tooltiptrigger ttMs</xsl:text>
+          </xsl:attribute>
+          <img>
+            <xsl:attribute name="src">
+              <xsl:text>images/img.png</xsl:text>
+            </xsl:attribute>
+          </img>
+        </span>
+        <span class="tooltip">
+          <xsl:value-of select="./tei:figDesc" />
+          <xsl:if test="(@hand or @medium)">
+            <xsl:if test="./tei:figDesc">
+              <xsl:text>, </xsl:text>
+            </xsl:if>
+            <xsl:call-template name="inks">
+              <xsl:with-param name="ink" select="@medium" />
+              <xsl:with-param name="attHand" select="$attHand" />
+            </xsl:call-template>
+          </xsl:if>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template name="variantMouseOver">
