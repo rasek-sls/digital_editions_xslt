@@ -37,22 +37,22 @@ This is a topelius custom xsl file
             <xsl:text>tei_add_subst_zts</xsl:text>
           </xsl:when>
           <xsl:when test="@reason='choice'">
-            <xsl:text>add_choice</xsl:text>
+            <xsl:text>tei_add_choice</xsl:text>
           </xsl:when>
           <xsl:when test="@place='leftMargin' or @place='rightMargin' or @place='topMargin' or @place='botMargin'">
-            <xsl:text>add_margin</xsl:text>
+            <xsl:text>tei_add_margin</xsl:text>
           </xsl:when>
           <xsl:when test="@place='sublinear'">
-            <xsl:text>add_sublinear</xsl:text>
+            <xsl:text>tei_add_sublinear</xsl:text>
           </xsl:when>
           <xsl:when test="@place='inline'">
-            <xsl:text>add_inline</xsl:text>
+            <xsl:text>tei_add_inline</xsl:text>
           </xsl:when>
           <xsl:when test="parent::tei:add and parent::tei:add[@place!='inline']">
-            <xsl:text>add_in_add</xsl:text>
+            <xsl:text>tei_add_in_add</xsl:text>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:text>add_over</xsl:text>
+            <xsl:text>tei_add_over</xsl:text>
           </xsl:otherwise>
         </xsl:choose>
         <xsl:call-template name="mediumClass" />
