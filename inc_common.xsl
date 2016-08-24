@@ -436,6 +436,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
   
   <xsl:template match="tei:note">
+    <xsl:variable name="handen" select="translate(@hand, '#', '')" />
     <xsl:if test="contains(@type, 'editor')">
       <img src="images/asterix.png">
         <!--<xsl:attribute name="onmouseover">
@@ -479,11 +480,16 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     <xsl:if test="contains(@type, 'editorial')">
       <span>
         <xsl:attribute name="class">
-          <xsl:text>editorial tooltiptrigger ttMs</xsl:text>
+          <xsl:text>tei_editorial tooltiptrigger ttMs</xsl:text>
         </xsl:attribute>
         <xsl:apply-templates />
       </span>
     </xsl:if>
+    <xsl:call-template name="mediumTooltip">
+      <xsl:with-param name="hand">
+        <xsl:value-of select="$handen"/>
+      </xsl:with-param>
+    </xsl:call-template>
   </xsl:template>
   
   <xsl:template name="listFootnotes">
