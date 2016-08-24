@@ -17,7 +17,14 @@ This is a parland custom xsl file
       <xsl:attribute name="class">
         <xsl:choose>
           <xsl:when test="parent::tei:subst">
-            <xsl:text>tei_add_subst_hps</xsl:text>
+            <xsl:choose>
+              <xsl:when test="parent::tei:p[@rend='noIdent']">
+                <xsl:text>tei_add_subst_noindent_hps</xsl:text>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:text>tei_add_subst_hps</xsl:text>
+              </xsl:otherwise>
+            </xsl:choose>
           </xsl:when>
           <xsl:when test="@reason='choice'">
             <xsl:text>tei_add_choice</xsl:text>
