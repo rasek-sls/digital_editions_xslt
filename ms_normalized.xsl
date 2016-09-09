@@ -426,20 +426,20 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
   
   <xsl:template match="tei:seg">
-    <span>
-      <xsl:attribute name="class">
-        <xsl:choose>
-          <xsl:when test="@type='alt'">
-            <xsl:text>alternative</xsl:text>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:text>segment</xsl:text>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:attribute>
-      <xsl:call-template name="placeIcon" />
-      <xsl:apply-templates/>
-    </span>
+    <xsl:choose>
+      <xsl:when test="@type='alt'">
+        <xsl:apply-templates select="tei:add[@reason='choice']"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:attribute name="class">
+                <xsl:text>segment</xsl:text>
+          </xsl:attribute>
+          <xsl:call-template name="placeIcon" />
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="tei:subst">
@@ -487,14 +487,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       </xsl:choose>
       <xsl:apply-templates/>
     </span>-->
-    <xsl:choose>
-      <xsl:when test="@reason='choice'">
-        <span class="add_choice"><xsl:apply-templates/></span>
-      </xsl:when>
-      <xsl:otherwise>
         <xsl:apply-templates/>
-      </xsl:otherwise>
-    </xsl:choose>
   </xsl:template>
   
   <!--<xsl:template match="tei:addSpan">
@@ -558,7 +551,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     <xsl:choose>
       <xsl:when test="child::tei:lg">
         <xsl:for-each select="child::tei:lg">
-          <xsl:sort select="@n"/>
+          <xsl:sort select="@n" data-type="number"/>
           <p class="strofe">
             <xsl:apply-templates />
           </p>
@@ -566,7 +559,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       </xsl:when>
       <xsl:when test="child::tei:l">
         <xsl:for-each select="child::tei:l">
-          <xsl:sort select="@n"/>
+          <xsl:sort select="@n" data-type="number"/>
           <xsl:choose>
             <xsl:when test="preceding-sibling::tei:delSpan">
               <xsl:variable name="delSpanId" select="substring(preceding-sibling::tei:delSpan[1]/@spanTo, 2)" />
@@ -588,7 +581,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:when test="child::tei:item">
         <xsl:variable name="countItems" select="count(child::tei:item)" />
         <xsl:for-each select="child::tei:item">
-          <xsl:sort select="@n"/>
+          <xsl:sort select="@n" data-type="number"/>
           <xsl:apply-templates />
           <xsl:if test="position() != $countItems">
             <xsl:text> </xsl:text>

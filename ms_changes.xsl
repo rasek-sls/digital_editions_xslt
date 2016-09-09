@@ -62,6 +62,21 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:call-template name="addSpanEnd"/>
         </p>
       </xsl:when>
+      <xsl:when test="@rend='underline' and @medium">
+        <p>
+          <xsl:attribute name="class">
+            <xsl:text>noIndent tei_underline_medium</xsl:text>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_medium</xsl:text>
+            </xsl:attribute>
+            <xsl:call-template name="addSpanStart"/>
+            <xsl:call-template name="delSpan"/>
+            <xsl:call-template name="addSpanEnd"/>
+          </span>
+        </p>
+      </xsl:when>
       <xsl:when test="@rend='underline'">
         <p>
           <xsl:attribute name="class">
@@ -119,6 +134,18 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   <xsl:template match="tei:l">
 
     <span>
+      <xsl:if test="contains(following-sibling::*[1][self::tei:addSpan]/@reason, 'choice')">
+        <xsl:attribute name="class">
+          <xsl:text>tei_l_choice_master</xsl:text>
+        </xsl:attribute>
+      </xsl:if>
+      <xsl:if test="following-sibling::*[1][self::tei:anchor]">
+        <xsl:if test="contains(following-sibling::*[2][self::tei:addSpan]/@reason, 'choice')">
+        <xsl:attribute name="class">
+          <xsl:text>tei_l_choice_master</xsl:text>
+        </xsl:attribute>
+        </xsl:if>
+      </xsl:if>
       <xsl:if test="parent::tei:switchPos[@medium]">
         <xsl:attribute name="class">
           <xsl:text> medium tooltipTrigger ttMs</xsl:text>
@@ -147,6 +174,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     </xsl:if>
 
     <xsl:choose>
+      <xsl:when test="contains(following-sibling::*[1][self::tei:addSpan]/@reason, 'choice')"/>
       <xsl:when test="following-sibling::*[1][self::tei:anchor]"/>
       <xsl:otherwise>
         <br />
@@ -313,25 +341,110 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
   
   <xsl:template match="tei:seg">
-    <span>
-      <xsl:attribute name="class">
+    <xsl:choose>
+      <xsl:when test="@type='alt'">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_subst_table</xsl:text>
+            <xsl:if test="ancestor::tei:p[@rend='noIndent'] or ancestor::tei:l or ancestor::tei:head">
+              <xsl:text>_noIndent</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_tbody</xsl:text>
+            </xsl:attribute>
+            <span>
+              <xsl:attribute name="class">
+                <xsl:text>tei_tr</xsl:text>
+              </xsl:attribute>
+              <span>
+                <xsl:attribute name="class">
+                  <xsl:text>tei_td_del</xsl:text>
+                </xsl:attribute>
+                <xsl:apply-templates mode="notAdd" />
+              </span>
+            </span>
+            <xsl:apply-templates select="child::tei:add[@reason='choice']" />
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
         <xsl:choose>
-          <xsl:when test="@type='alt'">
-            <xsl:text>alternative</xsl:text>
+          <xsl:when test="@type='split'">
+            <span>
+              <xsl:attribute name="class">
+                <xsl:text>seg</xsl:text>
+              </xsl:attribute>
+              <img src="images/split.png" />
+              <xsl:apply-templates />
+            </span>
+          </xsl:when>
+          <xsl:when test="@type='join'">
+            <span>
+              <xsl:attribute name="class">
+                <xsl:text>seg</xsl:text>
+              </xsl:attribute>
+              <img src="images/join.png" />
+              <xsl:apply-templates />
+            </span>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:text>segment</xsl:text>
+            <span>
+              <xsl:attribute name="class">
+                <xsl:text>segment</xsl:text>
+              </xsl:attribute>
+              <xsl:call-template name="placeIcon" />
+              <xsl:apply-templates />
+            </span>
           </xsl:otherwise>
         </xsl:choose>
-      </xsl:attribute>
-      <xsl:call-template name="placeIcon" />
-      <xsl:apply-templates/>
-    </span>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="tei:add[@reason='choice']" mode="notAdd"/>
+  
+
+  <xsl:template match="tei:del" mode="notAdd">
+    <xsl:variable name="attHand" select="translate(@hand, '#', '')" />
+    <xsl:variable name="medium" select="@medium" />
+    <xsl:choose>
+      <xsl:when test="@medium">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_deletion_medium_wrapper</xsl:text>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_deletion_editorial tooltiptrigger ttMs</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates />
+          </span>
+          <xsl:call-template name="mediumTooltip">
+            <xsl:with-param name="hand">
+              <xsl:value-of select="$attHand" />
+            </xsl:with-param>
+            <xsl:with-param name="medium">
+              <xsl:value-of select="$medium" />
+            </xsl:with-param>
+          </xsl:call-template>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>deletion</xsl:text>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <xsl:template match="tei:handShift">
     <xsl:choose>
-      <xsl:when test="ancestor::tei:p or ancestor::tei:opener or ancestor::tei:closer">
+      <xsl:when test="ancestor::tei:p or ancestor::tei:opener or ancestor::tei:closer or ancestor::tei:l">
         <xsl:call-template name="handSymbol" />
       </xsl:when>
       <xsl:otherwise>
@@ -373,22 +486,23 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     </xsl:if>
   </xsl:template>-->
   
-  <xsl:template name="marginAddSymbol">
+<!--   <xsl:template name="marginAddSymbol">
+    <xsl:param name="place" />
     <xsl:choose>
-      <xsl:when test="@place='leftMargin'">
+      <xsl:when test="@place='leftMargin' or $place='leftMargin'">
         <img src="images/ms_arrow_left.png"/>
       </xsl:when>
-      <xsl:when test="@place='rightMargin'">
+      <xsl:when test="@place='rightMargin' or $place='rightMargin'">
         <img src="images/ms_arrow_right.png"/>
       </xsl:when>
-      <xsl:when test="@place='topMargin'">
+      <xsl:when test="@place='topMargin' or $place='topMargin'">
         <img src="images/ms_arrow_up.png"/>
       </xsl:when>
-      <xsl:when test="@place='botMargin'">
+      <xsl:when test="@place='botMargin' or $place='botMargin'">
         <img src="images/ms_arrow_down.png"/>
       </xsl:when>
     </xsl:choose>
-  </xsl:template>
+  </xsl:template>  -->
   
   <xsl:template name="sofortSymbol">
     <xsl:if test="contains(@type, 'immediate')">
@@ -396,10 +510,19 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     </xsl:if>
   </xsl:template>
   
+  <xsl:template name="noAnchorSymbol">
+    <xsl:if test="@type='noAnchor'">
+      <span class="symbol_red">
+        <xsl:text>&#936;?</xsl:text>
+      </span>
+    </xsl:if>
+  </xsl:template>
+  
   <xsl:template match="tei:addSpan">
     <xsl:call-template name="sofortSymbol"/>
+    <xsl:call-template name="noAnchorSymbol"/>
     <!--<img src="images/addspan_from.png"/>-->
-    <xsl:if test="contains(@place, 'Margin')">
+    <xsl:if test="contains(@place, 'Margin') and not(@reason='choice')">
       <!--<xsl:call-template name="marginAnchorSymbol"/>-->
       <xsl:call-template name="marginAddSymbol"/>
     </xsl:if>
@@ -408,16 +531,16 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   <xsl:template match="tei:anchor">
     <xsl:variable name="anchorId" select="concat('#',@id)"/>
     <xsl:choose>
-      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='rightMargin'">
+      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='rightMargin' and not(//tei:addSpan[@spanTo=$anchorId]/@reason='choice')">
         <img src="images/ms_arrow_right.png"/>
       </xsl:when>
-      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='leftMargin'">
+      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='leftMargin' and not(//tei:addSpan[@spanTo=$anchorId]/@reason='choice')">
         <img src="images/ms_arrow_left.png"/>
       </xsl:when>
-      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='topMargin'">
+      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='topMargin' and not(//tei:addSpan[@spanTo=$anchorId]/@reason='choice')">
         <img src="images/ms_arrow_up.png"/>
       </xsl:when>
-      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='botMargin'">
+      <xsl:when test="//tei:addSpan[@spanTo=$anchorId]/@place='botMargin' and not(//tei:addSpan[@spanTo=$anchorId]/@reason='choice')">
         <img src="images/ms_arrow_down.png"/>
       </xsl:when>
     </xsl:choose>
@@ -431,6 +554,8 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     </xsl:choose>--> 
     <xsl:choose>
       <xsl:when test="following-sibling::*[1][self::tei:anchor]"/>
+      <xsl:when test="following-sibling::*[1][self::tei:addSpan/@reason='choice']"/>
+      <xsl:when test="following-sibling::*[1][self::tei:addSpan/@reason='choice']"/>
       <xsl:when test="contains(@id, 'del') or contains(@id, 'add')">
         <br/>
       </xsl:when>
@@ -445,13 +570,30 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   
   <xsl:template match="tei:restore">
     <xsl:call-template name="sofortSymbol"/>
-    <span>
-      <xsl:attribute name="class">
-        <xsl:text>restore</xsl:text>
-        <xsl:call-template name="mediumClass" />
-      </xsl:attribute>
-      <xsl:apply-templates/>
-    </span>
+    <xsl:choose>
+      <xsl:when test="@hand">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_restore_editorial_wrapper</xsl:text>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_deletion</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>restore</xsl:text>
+            <xsl:call-template name="mediumClass" />
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:call-template name="mediumTooltip"/>
   </xsl:template>
 
@@ -546,6 +688,22 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
 
   <xsl:template match="tei:date">
     <xsl:choose>
+      <xsl:when test="@rend and @medium">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_</xsl:text>
+            <xsl:value-of select="@rend"/>
+            <xsl:text>_medium</xsl:text>
+            <xsl:text> tooltiptrigger ttMs</xsl:text>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_medium</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
       <xsl:when test="@rend">
         <span>
           <xsl:call-template name="attRend">
@@ -577,26 +735,66 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <br />
           <br />
         </xsl:if>
-        <span>
-          <xsl:call-template name="attRend">
-            <xsl:with-param name="defaultClasses">
-              <xsl:call-template name="mediumClass" />
-            </xsl:with-param>
-          </xsl:call-template>
-          <xsl:apply-templates/>
-        </span>
+        <xsl:choose>
+          <xsl:when test="@rend and @medium">
+            <span>
+              <xsl:attribute name="class">
+                <xsl:text>tei_</xsl:text>
+                <xsl:value-of select="@rend"/>
+                <xsl:text>_medium</xsl:text>
+                <xsl:text> tooltiptrigger ttMs</xsl:text>
+              </xsl:attribute>
+              <span>
+                <xsl:attribute name="class">
+                  <xsl:text>tei_hi_medium</xsl:text>
+                </xsl:attribute>
+                <xsl:apply-templates/>
+              </span>
+            </span>
+          </xsl:when>
+          <xsl:otherwise>
+            <span>
+              <xsl:call-template name="attRend">
+                <xsl:with-param name="defaultClasses">
+                  <xsl:call-template name="mediumClass" />
+                </xsl:with-param>
+              </xsl:call-template>
+              <xsl:apply-templates/>
+            </span>
+          </xsl:otherwise>
+        </xsl:choose>
         <xsl:call-template name="mediumTooltip"/>
       </xsl:when>
       <xsl:otherwise>
         <p class="dateline noIndent">
-          <span>
-            <xsl:call-template name="attRend">
-              <xsl:with-param name="defaultClasses">
-                <xsl:call-template name="mediumClass" />
-              </xsl:with-param>
-            </xsl:call-template>
-            <xsl:apply-templates/>
-          </span>
+          <xsl:choose>
+            <xsl:when test="@rend and @medium">
+              <span>
+                <xsl:attribute name="class">
+                  <xsl:text>tei_</xsl:text>
+                  <xsl:value-of select="@rend"/>
+                  <xsl:text>_medium</xsl:text>
+                  <xsl:text> tooltiptrigger ttMs</xsl:text>
+                </xsl:attribute>
+                <span>
+                  <xsl:attribute name="class">
+                    <xsl:text>tei_hi_medium</xsl:text>
+                  </xsl:attribute>
+                  <xsl:apply-templates/>
+                </span>
+              </span>
+            </xsl:when>
+            <xsl:otherwise>
+              <span>
+                <xsl:call-template name="attRend">
+                  <xsl:with-param name="defaultClasses">
+                    <xsl:call-template name="mediumClass" />
+                  </xsl:with-param>
+                </xsl:call-template>
+                <xsl:apply-templates/>
+              </span>
+            </xsl:otherwise>
+          </xsl:choose>
           <xsl:call-template name="mediumTooltip"/>
         </p>
       </xsl:otherwise>
@@ -604,18 +802,38 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
   <xsl:template match="tei:foreign">
-    <span>
-      <xsl:call-template name="attRend">
-        <xsl:with-param name="defaultClasses">
-          <xsl:text>foreign tooltiptrigger ttLang</xsl:text>
-          <xsl:call-template name="mediumClass"/>
-        </xsl:with-param>
-      </xsl:call-template>
-      <xsl:attribute name="lang">
-        <xsl:value-of select="@xml:lang"/>
-      </xsl:attribute>
-      <xsl:apply-templates/>
-    </span>
+    <xsl:choose>
+      <xsl:when test="@rend and @medium">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_</xsl:text>
+            <xsl:value-of select="@rend"/>
+            <xsl:text>_medium</xsl:text>
+            <xsl:text> foreign tooltiptrigger ttLang ttMs</xsl:text>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_medium</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:call-template name="attRend">
+            <xsl:with-param name="defaultClasses">
+              <xsl:text>foreign tooltiptrigger ttLang</xsl:text>
+              <xsl:call-template name="mediumClass"/>
+            </xsl:with-param>
+          </xsl:call-template>
+          <xsl:attribute name="lang">
+            <xsl:value-of select="@xml:lang"/>
+          </xsl:attribute>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:call-template name="xmlLang"/>
     <xsl:call-template name="mediumTooltip"/>
   </xsl:template>
@@ -631,77 +849,197 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
   <xsl:template match="tei:hi">
-    <span>
-      <xsl:call-template name="attRend">
-        <xsl:with-param name="defaultClasses">
-          <xsl:call-template name="mediumClass"/>
-        </xsl:with-param>
-      </xsl:call-template>
-      <xsl:apply-templates/>
-    </span>
+    <xsl:choose>
+      <xsl:when test="@medium['underline'] or @medium['underline2'] or @medium['dashUnderline'] or @medium['encircled']">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_</xsl:text>
+            <xsl:value-of select="@rend"/>
+            <xsl:text>_medium</xsl:text>
+            <xsl:text> tooltiptrigger ttMs</xsl:text>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_medium</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:when test="@hand">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_hi_editorial_wrapper</xsl:text>
+          </xsl:attribute>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_editorial</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:call-template name="attRend">
+            <xsl:with-param name="defaultClasses">
+              <xsl:call-template name="mediumClass"/>
+            </xsl:with-param>
+          </xsl:call-template>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:call-template name="mediumTooltip" />
   </xsl:template>
 
   <xsl:template match="tei:persName|tei:rs">
-    <span>
-      <xsl:call-template name="attRend">
-        <xsl:with-param name="defaultClasses">
-          <xsl:text>person tooltiptrigger ttPerson</xsl:text>
-          <xsl:if test="@correspUncert='Y'">
-            <xsl:text> uncertain</xsl:text>
+    <xsl:choose>
+      <xsl:when test="@rend and @medium">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_</xsl:text>
+            <xsl:value-of select="@rend"/>
+            <xsl:text>_medium</xsl:text>
+            <xsl:text> person tooltiptrigger ttPerson ttMs</xsl:text>
+            <xsl:if test="@correspUncert='Y'">
+              <xsl:text> uncertain</xsl:text>
+            </xsl:if>
+            <xsl:if test="@role='fictional'">
+              <xsl:text> fictional</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
+          <xsl:if test="@corresp">
+            <xsl:attribute name="id">
+              <xsl:value-of select="@corresp"/>
+            </xsl:attribute>
           </xsl:if>
-          <xsl:if test="@role='fictional'">
-            <xsl:text> fictional</xsl:text>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_medium</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:call-template name="attRend">
+            <xsl:with-param name="defaultClasses">
+              <xsl:text>person tooltiptrigger ttPerson</xsl:text>
+              <xsl:if test="@correspUncert='Y'">
+                <xsl:text> uncertain</xsl:text>
+              </xsl:if>
+              <xsl:if test="@role='fictional'">
+                <xsl:text> fictional</xsl:text>
+              </xsl:if>
+              <xsl:call-template name="mediumClass"/>
+            </xsl:with-param>
+          </xsl:call-template>
+          <xsl:if test="@corresp">
+            <xsl:attribute name="id">
+              <xsl:value-of select="@corresp"/>
+            </xsl:attribute>
           </xsl:if>
-          <xsl:call-template name="mediumClass"/>
-        </xsl:with-param>
-      </xsl:call-template>
-      <xsl:if test="@corresp">
-        <xsl:attribute name="id">
-          <xsl:value-of select="@corresp"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </span>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:call-template name="mediumTooltip"/>
   </xsl:template>
 
   <xsl:template match="tei:placeName">
-    <span>
-      <xsl:call-template name="attRend">
-        <xsl:with-param name="defaultClasses">
-          <xsl:text>placeName tooltiptrigger ttPlace</xsl:text>
-          <xsl:if test="@correspUncert='Y'">
-            <xsl:text> uncertain</xsl:text>
+    <xsl:choose>
+      <xsl:when test="@rend and @medium">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_</xsl:text>
+            <xsl:value-of select="@rend"/>
+            <xsl:text>_medium</xsl:text>
+            <xsl:text> placeName tooltiptrigger ttPlace ttMs</xsl:text>
+            <xsl:if test="@correspUncert='Y'">
+              <xsl:text> uncertain</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
+          <xsl:if test="@corresp">
+            <xsl:attribute name="id">
+              <xsl:value-of select="@corresp"/>
+            </xsl:attribute>
           </xsl:if>
-          <xsl:call-template name="mediumClass"/>
-        </xsl:with-param>
-      </xsl:call-template>
-      <xsl:if test="@corresp">
-        <xsl:attribute name="id">
-          <xsl:value-of select="@corresp"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </span>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_medium</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:call-template name="attRend">
+            <xsl:with-param name="defaultClasses">
+              <xsl:text>placeName tooltiptrigger ttPlace</xsl:text>
+              <xsl:if test="@correspUncert='Y'">
+                <xsl:text> uncertain</xsl:text>
+              </xsl:if>
+              <xsl:call-template name="mediumClass"/>
+            </xsl:with-param>
+          </xsl:call-template>
+          <xsl:if test="@corresp">
+            <xsl:attribute name="id">
+              <xsl:value-of select="@corresp"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:call-template name="mediumTooltip"/>
   </xsl:template>
 
   <xsl:template match="tei:title">
-    <span>
-      <xsl:call-template name="attRend">
-        <xsl:with-param name="defaultClasses">
-          <xsl:text>title tooltiptrigger ttTitle</xsl:text>
-          <xsl:call-template name="mediumClass"/>
-        </xsl:with-param>
-      </xsl:call-template>
-      <xsl:if test="@corresp">
-        <xsl:attribute name="id">
-          <xsl:value-of select="@corresp"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:apply-templates/>
-    </span>
+    <xsl:choose>
+      <xsl:when test="@rend and @medium">
+        <span>
+          <xsl:attribute name="class">
+            <xsl:text>tei_</xsl:text>
+            <xsl:value-of select="@rend"/>
+            <xsl:text>_medium</xsl:text>
+            <xsl:text> title tooltiptrigger ttTitle ttMs</xsl:text>
+            <xsl:if test="@correspUncert='Y'">
+              <xsl:text> uncertain</xsl:text>
+            </xsl:if>
+          </xsl:attribute>
+          <xsl:if test="@corresp">
+            <xsl:attribute name="id">
+              <xsl:value-of select="@corresp"/>
+            </xsl:attribute>
+          </xsl:if>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tei_hi_medium</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates/>
+          </span>
+        </span>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:call-template name="attRend">
+            <xsl:with-param name="defaultClasses">
+              <xsl:text>title tooltiptrigger ttTitle</xsl:text>
+              <xsl:call-template name="mediumClass"/>
+            </xsl:with-param>
+          </xsl:call-template>
+          <xsl:if test="@corresp">
+            <xsl:attribute name="id">
+              <xsl:value-of select="@corresp"/>
+            </xsl:attribute>
+          </xsl:if>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
     <xsl:call-template name="mediumTooltip"/>
   </xsl:template>
   
@@ -714,7 +1052,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:when test="following::tei:anchor[@id=$addSpanId1] or following::tei:anchor[@id=$addSpanId2]">
             <xsl:variable name="test">
               <xsl:text>&lt;span class=&quot;addSpan</xsl:text>
-              <xsl:if test="preceding::tei:addSpan[@medium]">
+              <xsl:if test="preceding::tei:addSpan[1][@medium]">
                 <xsl:text> medium tooltipTrigger ttMs</xsl:text>
               </xsl:if>
               <xsl:text>&quot;&gt;</xsl:text>
@@ -766,14 +1104,17 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
                 <xsl:choose>
                   <xsl:when test="preceding::tei:delSpan[1]/@rend = 'strikethrough'">
                     <xsl:text>deletion</xsl:text>
-                    <xsl:if test="preceding::tei:delSpan[1][@medium]">
-                      <xsl:text> medium tooltipTrigger ttMs</xsl:text>
-                    </xsl:if>
                   </xsl:when>
                   <xsl:otherwise>
                     <xsl:text>delSpan</xsl:text>
-                    <xsl:if test="preceding::tei:delSpan[1][@medium]">
-                      <xsl:text> medium tooltipTrigger ttMs</xsl:text>
+                    <xsl:if test="@rend='noIndent' or contains(name(), 'head') or (name()='l')">
+                      <xsl:text>_noIndent</xsl:text>
+                    </xsl:if>
+                    <xsl:if test="preceding::tei:delSpan[1][@hand]">
+                      <xsl:text>_editorial</xsl:text>
+                    </xsl:if>
+                    <xsl:if test="preceding::tei:delSpan[1][@medium] and not(preceding::tei:delSpan[1][@hand])">
+                      <xsl:text>_medium tooltipTrigger ttMs</xsl:text>
                     </xsl:if>
                   </xsl:otherwise>
                 </xsl:choose>

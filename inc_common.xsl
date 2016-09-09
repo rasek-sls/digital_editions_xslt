@@ -310,7 +310,14 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       </xsl:when>
       <xsl:when test="@unit='part' and @when">
         <p class="milestoneWhen center">
-          <xsl:text>Avsnittet ingår i HT </xsl:text>
+          <xsl:choose>
+            <xsl:when test="$bookId='4' or $bookId='5' or $bookId='6'">
+              <xsl:text>Avsnittet ingår i HT </xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>Avsnittet publicerades </xsl:text>
+            </xsl:otherwise>
+          </xsl:choose>
           <xsl:choose>
             <xsl:when test="substring(@when,9,1)='0'">
               <xsl:value-of select="substring(@when,10,1)"/>
@@ -416,6 +423,11 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   <xsl:template name="attRend">
     <xsl:param name="defaultClasses"/>
     <xsl:choose>
+      <xsl:when test="@hand">
+        <xsl:attribute name="class">
+          <xsl:text></xsl:text>
+        </xsl:attribute>
+      </xsl:when>
       <xsl:when test="@rend">
         <xsl:attribute name="class">
           <xsl:value-of select="$defaultClasses" />
@@ -432,6 +444,24 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           </xsl:attribute>
         </xsl:if>
       </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template name="marginAddSymbol">
+    <xsl:param name="place" />
+    <xsl:choose>
+      <xsl:when test="@place='leftMargin' or $place='leftMargin'">
+        <img src="images/ms_arrow_left.png"/>
+      </xsl:when>
+      <xsl:when test="@place='rightMargin' or $place='rightMargin'">
+        <img src="images/ms_arrow_right.png"/>
+      </xsl:when>
+      <xsl:when test="@place='topMargin' or $place='topMargin'">
+        <img src="images/ms_arrow_up.png"/>
+      </xsl:when>
+      <xsl:when test="@place='botMargin' or $place='botMargin'">
+        <img src="images/ms_arrow_down.png"/>
+      </xsl:when>
     </xsl:choose>
   </xsl:template>
   
@@ -480,9 +510,22 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     <xsl:if test="contains(@type, 'editorial')">
       <span>
         <xsl:attribute name="class">
-          <xsl:text>tei_editorial tooltiptrigger ttMs</xsl:text>
+          <xsl:choose>
+            <xsl:when test="contains(@place, 'Margin')">
+              <xsl:text>tei_note_editorial_margin tooltiptrigger ttMs</xsl:text>
+            </xsl:when>
+            <xsl:otherwise>
+              <xsl:text>tei_note_editorial tooltiptrigger ttMs</xsl:text>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:attribute>
+        <xsl:call-template name="marginAddSymbol">
+          <xsl:with-param name="place" select="@place"/>
+        </xsl:call-template>
         <xsl:apply-templates />
+        <xsl:call-template name="marginAddSymbol">
+          <xsl:with-param name="place" select="@place"/>
+        </xsl:call-template>
       </span>
     </xsl:if>
     <xsl:call-template name="mediumTooltip">
@@ -542,7 +585,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
         </xsl:attribute>-->
       </img>
       <span class="tooltip">
-        <xsl:text>Texten fortsätter</xsl:text>
+        <xsl:text>texten fortsätter</xsl:text>
         <xsl:choose>
           <xsl:when test="contains(@rend, 'previousPage')">
             <xsl:text> på föregående sida</xsl:text>
@@ -602,16 +645,16 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           </img>
         </span>
         <span class="tooltip">
-          <xsl:value-of select="./tei:figDesc" />
           <xsl:if test="(@hand or @medium)">
-            <xsl:if test="./tei:figDesc">
-              <xsl:text>, </xsl:text>
-            </xsl:if>
             <xsl:call-template name="inks">
               <xsl:with-param name="ink" select="@medium" />
               <xsl:with-param name="attHand" select="$attHand" />
             </xsl:call-template>
+            <xsl:if test="./tei:figDesc">
+              <xsl:text>; </xsl:text>
+            </xsl:if>
           </xsl:if>
+          <xsl:value-of select="./tei:figDesc" />
         </span>
       </xsl:otherwise>
     </xsl:choose>
@@ -633,7 +676,6 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:when test="contains(@type,'ort') and contains(@type,'int')">
             <xsl:text>skillnad i ortografi/typografi och i interpunktion</xsl:text>
           </xsl:when>
-          
           <xsl:when test="substring(@type,1,3)='sub'">
             <xsl:text>substantiell skillnad</xsl:text>
           </xsl:when>
@@ -645,6 +687,59 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           </xsl:when>
           <xsl:when test="substring(@type,1,3)='ide'">
             <xsl:text>identiskt</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,1,3)='err'">
+            <xsl:text>sättnings-/tryckfel</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,1,3)='typ'">
+            <xsl:text>skillnad i typografi</xsl:text>
+          </xsl:when>
+        </xsl:choose>
+      </span>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template name="variantMouseOver_collection">
+    <xsl:if test="@type">
+      <span class="tooltip ttVariant">
+        <xsl:choose>
+          <xsl:when test="substring(@type,1,3)='sub'">
+            <xsl:text>substantiell skillnad</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,1,3)='ort'">
+            <xsl:text>ortografisk/stilistisk skillnad</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,1,3)='int'">
+            <xsl:text>skillnad i interpunktion</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,1,3)='ide'">
+            <xsl:text>identiskt</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,1,3)='err'">
+            <xsl:text>sättnings-/tryckfel</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,1,3)='typ'">
+            <xsl:text>skillnad i typografi</xsl:text>
+          </xsl:when>
+        </xsl:choose>
+        <xsl:choose>
+        <xsl:when test="substring(@type,5,3)='sub'">
+            <xsl:text>; substantiell skillnad</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,5,3)='ort'">
+            <xsl:text>; ortografisk/stilistisk skillnad</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,5,3)='int'">
+            <xsl:text>; skillnad i interpunktion</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,5,3)='ide'">
+            <xsl:text>; identiskt</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,5,3)='err'">
+            <xsl:text>; sättnings-/tryckfel</xsl:text>
+          </xsl:when>
+          <xsl:when test="substring(@type,5,3)='typ'">
+            <xsl:text>; skillnad i typografi</xsl:text>
           </xsl:when>
         </xsl:choose>
       </span>
@@ -667,7 +762,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:text>[oläsligt]</xsl:text>
     </span>
     <span class="tooltip">
-      <xsl:text>Oläsligt</xsl:text>
+      <xsl:text>oläsligt</xsl:text>
       <xsl:choose>
         <xsl:when test="@extent and @unit">
           <xsl:text> (</xsl:text>
@@ -722,7 +817,8 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
 
   <xsl:template name="mediumTooltip">
     <xsl:param name="hand" />
-    <xsl:if test="@medium">
+    <xsl:param name="medium" />
+    <xsl:if test="@medium or @hand">
       <span class="tooltip">
         <xsl:call-template name="inks">
           <xsl:with-param name="ink" select="@medium"/>
@@ -773,6 +869,12 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:when test="@reason='writing'">
         <xsl:text>: handstil</xsl:text>
       </xsl:when>
+      <xsl:when test="@reason='ribbon'">
+        <xsl:text>: dåligt färgband</xsl:text>
+      </xsl:when>
+      <xsl:when test="@reason='overtyped'">
+        <xsl:text>: strykning (på skrivmaskin)</xsl:text>
+      </xsl:when>
       <xsl:otherwise/>
     </xsl:choose>
   </xsl:template>
@@ -815,6 +917,12 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:when test="@reason='seal'">
         <xsl:text>svårläst p.g.a. sigill</xsl:text>
       </xsl:when>
+      <xsl:when test="@reason='ribbon'">
+        <xsl:text>svårläst p.g.a. dåligt färgband</xsl:text>
+      </xsl:when>
+      <xsl:when test="@reason='overtyped'">
+        <xsl:text>svårläst p.g.a. strykning (på skrivmaskin)</xsl:text>
+      </xsl:when>
       <xsl:otherwise/>
     </xsl:choose>
   </xsl:template>
@@ -856,6 +964,9 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       </xsl:when>
       <xsl:when test="@reason='overwritten'">
         <xsl:text>oläsligt p.g.a. överskrivning</xsl:text>
+      </xsl:when>
+      <xsl:when test="@reason='ribbon'">
+        <xsl:text>oläsligt p.g.a. dåligt färgband</xsl:text>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>tillagt av utgivaren</xsl:text>
@@ -1051,7 +1162,9 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     <xsl:choose>
       <xsl:when test="string-length($attHand)&gt;0">
         <xsl:value-of select="//tei:handNote[@id=$attHand]"/>
-        <xsl:text>: </xsl:text>
+        <xsl:if test="string-length($ink)&gt;0">
+          <xsl:text>: </xsl:text>
+        </xsl:if>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>med annan penna: </xsl:text>
@@ -1077,13 +1190,40 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
         <xsl:text>annat brunt bläck</xsl:text>
       </xsl:when>
       <xsl:when test="$ink='pencil'">
-        <xsl:text>blyerts</xsl:text>
+        <xsl:text>blyerts eller anilinpenna</xsl:text>
       </xsl:when>
       <xsl:when test="$ink='red-ink'">
         <xsl:text>rött bläck</xsl:text>
       </xsl:when>
       <xsl:when test="$ink='violet-ink'">
         <xsl:text>violett bläck</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='blue-pen'">
+        <xsl:text>blå kulspetspenna</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='green-ink'">
+        <xsl:text>grönt bläck</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='green-pencil'">
+        <xsl:text>grönt färgpenna</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='green-pen'">
+        <xsl:text>grön kulspetspenna</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='purple-pencil'">
+        <xsl:text>violett färgpenna</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='purple-pen'">
+        <xsl:text>violett kulspetspenna</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='red-pencil'">
+        <xsl:text>röd färgpenna</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='violet-ink'">
+        <xsl:text>violett bläck</xsl:text>
+      </xsl:when>
+      <xsl:when test="$ink='typewrite'">
+        <xsl:text>maskinskrivet</xsl:text>
       </xsl:when>
     </xsl:choose>
   </xsl:template>
