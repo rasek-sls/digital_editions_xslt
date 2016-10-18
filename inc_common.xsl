@@ -308,6 +308,11 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <img src="images/smallbar.png"/>
         </p>
       </xsl:when>
+      <xsl:when test="@type='dashedBar'">
+        <p class="center">
+          <xsl:text>&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;&#160;&#160;&#x2014;</xsl:text>
+        </p>
+      </xsl:when>
       <xsl:when test="@unit='part' and @when">
         <p class="milestoneWhen center">
           <xsl:choose>
@@ -341,8 +346,10 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
         </p>
       </xsl:when>
       <xsl:when test="@unit='part'">
-        <p class="milestonePart">
+        <p>
           <xsl:text>&#160;</xsl:text>
+          <br />
+          <br />
         </p>
       </xsl:when>
     </xsl:choose>
@@ -447,6 +454,39 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     </xsl:choose>
   </xsl:template>
   
+  <xsl:template name="attRendTooltip">
+    <xsl:param name="defaultClasses"/>
+    <xsl:choose>
+      <xsl:when test="@hand">
+        <xsl:attribute name="class">
+          <xsl:text></xsl:text>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:when test="@rend='expanded italics'">
+        <xsl:attribute name="class">
+          <xsl:text>expandedTT italicsTT</xsl:text>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:when test="@rend">
+        <xsl:attribute name="class">
+          <xsl:value-of select="$defaultClasses" />
+          <xsl:if test="string-length(normalize-space($defaultClasses)) > 0">
+            <xsl:text> </xsl:text>
+          </xsl:if>
+          <xsl:value-of select="@rend" />
+          <xsl:text>TT</xsl:text>
+        </xsl:attribute>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:if test="string-length(normalize-space($defaultClasses)) > 0">
+          <xsl:attribute name="class">
+            <xsl:value-of select="$defaultClasses" />
+          </xsl:attribute>
+        </xsl:if>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
   <xsl:template name="marginAddSymbol">
     <xsl:param name="place" />
     <xsl:choose>
@@ -530,7 +570,14 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     </xsl:if>
     <xsl:call-template name="mediumTooltip">
       <xsl:with-param name="hand">
-        <xsl:value-of select="$handen"/>
+        <xsl:choose>
+          <xsl:when test="string-length($handen)&gt;0">
+            <xsl:value-of select="$handen"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:text>Henry Parland med </xsl:text>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:with-param>
     </xsl:call-template>
   </xsl:template>
@@ -800,10 +847,18 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
         <xsl:otherwise/>
       </xsl:choose>
       <xsl:call-template name="attReason"/>
-      <xsl:if test="@medium">
-        <br/>
+      <xsl:if test="@medium or @hand">
+        <xsl:text>; </xsl:text>
         <xsl:call-template name="inks">
           <xsl:with-param name="ink" select="@medium"/>
+          <xsl:with-param name="attHand" select="translate(@hand, '#', '')"/>
+        </xsl:call-template>
+      </xsl:if>
+      <xsl:if test="parent::node()[@medium] or parent::node()[@hand]">
+        <xsl:text>; </xsl:text>
+        <xsl:call-template name="inks">
+          <xsl:with-param name="ink" select="parent::node()/@medium"/>
+          <xsl:with-param name="attHand" select="translate(parent::node()/@hand, '#', '')"/>
         </xsl:call-template>
       </xsl:if>
     </span>
@@ -818,11 +873,18 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   <xsl:template name="mediumTooltip">
     <xsl:param name="hand" />
     <xsl:param name="medium" />
+    <xsl:variable name="handen">
+      <xsl:choose>
+        <xsl:when test="string-length($hand)&gt;0">
+          <xsl:value-of select="$hand"/>
+        </xsl:when>
+      </xsl:choose>
+    </xsl:variable>
     <xsl:if test="@medium or @hand">
       <span class="tooltip">
         <xsl:call-template name="inks">
           <xsl:with-param name="ink" select="@medium"/>
-          <xsl:with-param name="attHand" select="$hand"/>
+          <xsl:with-param name="attHand" select="$handen"/>
         </xsl:call-template>
       </span>
     </xsl:if>
@@ -928,6 +990,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
   <xsl:template name="attReasonSupplied">
+    <xsl:param name="source"/>
     <xsl:choose>
       <xsl:when test="@reason='writing'">
         <xsl:text>oläslig handstil</xsl:text>
@@ -972,6 +1035,10 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
         <xsl:text>tillagt av utgivaren</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
+    <xsl:if test="string-length($source)&gt;0">
+      <xsl:text>; källa: </xsl:text>
+      <xsl:value-of select="$source"/>
+    </xsl:if>
   </xsl:template>
 
   <xsl:template name="xmlLang">
@@ -1049,7 +1116,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:with-param name="count" select="@extent"/>
       <xsl:with-param name="text">
 
-        <xsl:choose>
+     <!--    <xsl:choose>
           <xsl:when test="name() = 'space'">
             <xsl:choose>
               <xsl:when test="@unit='letters'">
@@ -1066,17 +1133,19 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:otherwise>
             <xsl:choose>
               <xsl:when test="@unit='letters'">
-                <xsl:text>-</xsl:text>
+                <xsl:text></xsl:text>
               </xsl:when>
               <xsl:when test="@unit='words'">
-                <xsl:text>----</xsl:text>
+                <xsl:text></xsl:text>
               </xsl:when>
               <xsl:when test="@unit='lines'">
-                <xsl:text>---- ---- ---- ---- ----</xsl:text>
+                <xsl:text></xsl:text>
               </xsl:when>
             </xsl:choose>
           </xsl:otherwise>
-        </xsl:choose>
+        </xsl:choose>  -->
+
+        <xsl:text>&#160;&#160;&#160;&#160;</xsl:text>
 
       </xsl:with-param>
       <xsl:with-param name="spaces">
@@ -1160,11 +1229,14 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     <xsl:param name="ink"/>
     <xsl:param name="attHand"/>
     <xsl:choose>
-      <xsl:when test="string-length($attHand)&gt;0">
+      <xsl:when test="string-length(//tei:handNote[@id=$attHand])&gt;0">
         <xsl:value-of select="//tei:handNote[@id=$attHand]"/>
         <xsl:if test="string-length($ink)&gt;0">
           <xsl:text>: </xsl:text>
         </xsl:if>
+      </xsl:when>
+      <xsl:when test="$attHand='Henry Parland med '">
+        <xsl:value-of select="$attHand"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:text>med annan penna: </xsl:text>

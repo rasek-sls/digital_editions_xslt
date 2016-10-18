@@ -53,33 +53,22 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:call-template name="attRend">
             <!--<xsl:attribute name="class">-->
             <xsl:with-param name="defaultClasses">
-              <xsl:choose>
-                <xsl:when test="$bookId='1'">
-                  <xsl:text>poemTitle</xsl:text>
-                </xsl:when>
+
                 <!--<xsl:when test="$bookId='15'">
                       <xsl:text>letterTitle</xsl:text>
                     </xsl:when>-->
-                <xsl:when test="$bookId='4' or $bookId='5'">
-                  <xsl:choose>
-                    <xsl:when test="@type">
-                      <xsl:value-of select="@type"/>
-                      <xsl:if test="name(following-sibling::*[1])!='head'">
-                        <xsl:text> titleBottomMargin</xsl:text>
-                      </xsl:if>
-                    </xsl:when>
-                    <xsl:otherwise>
-                      <xsl:text>shortstory</xsl:text>
-                      <xsl:if test="name(preceding-sibling::*[1])='head'">
-                        <xsl:text> titleTopMargin</xsl:text>
-                      </xsl:if>
-                    </xsl:otherwise>
-                  </xsl:choose>
-                </xsl:when>
-                <xsl:otherwise>
-                  <xsl:text>title</xsl:text>
-                </xsl:otherwise>
-              </xsl:choose>
+
+                  
+                <xsl:choose>
+                  <xsl:when test="@type">
+                    <xsl:text> </xsl:text>
+                    <xsl:value-of select="@type"/>
+                  </xsl:when>
+                  <xsl:otherwise>
+                    <xsl:text>title1</xsl:text>
+                  </xsl:otherwise>
+                </xsl:choose>
+              
             </xsl:with-param>
           </xsl:call-template>
           <xsl:choose>
@@ -156,15 +145,15 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
 
   <xsl:template match="tei:l">
     <xsl:choose>
-      <xsl:when test="@empty='true'"/>
+      <xsl:when test="@empty='true'" />
       <xsl:otherwise>
         <xsl:choose>
           <xsl:when test="child::tei:seg[@type='split']">
             <p>
               <xsl:attribute name="class">
                 <xsl:text>l l</xsl:text>
-                <xsl:value-of select="@n"/>
-                <xsl:if test="@rend='indent' or $bookId='4' or $bookId='5'">
+                <xsl:value-of select="@n" />
+                <xsl:if test="@rend='indent' or @rend='center' or $bookId='4' or $bookId='5' or $bookId='6'">
                   <xsl:text> lIndent</xsl:text>
                 </xsl:if>
               </xsl:attribute>
@@ -173,67 +162,124 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
                   <span>
                     <xsl:attribute name="class">
                       <xsl:text>lNumber l</xsl:text>
-                      <xsl:value-of select="@n"/>
+                      <xsl:value-of select="@n" />
                     </xsl:attribute>
-                    <xsl:value-of select="@n"/>
+                    <xsl:value-of select="@n" />
                   </span>
                 </xsl:when>
-                <xsl:when
-                  test="count(preceding-sibling::tei:l)&lt;1 and (ancestor::tei:div[@type='main'] or ancestor::tei:div[@type='letter'] or not(ancestor::tei:div[@type]))">
+                <xsl:when test="count(preceding-sibling::tei:l)&lt;1 and (ancestor::tei:div[@type='main'] or ancestor::tei:div[@type='letter'] or not(ancestor::tei:div[@type]))">
                   <span class="lNumber">
                     <xsl:choose>
                       <xsl:when test="$bookId='15'">
-                        <xsl:number count="tei:p|tei:lg|tei:list" level="any" from="//tei:body"/>
+                        <xsl:number count="tei:p|tei:lg|tei:list" level="any" from="//tei:body" />
                       </xsl:when>
                       <xsl:otherwise>
-                        <xsl:number count="tei:p|tei:lg|tei:list"/>
+                        <xsl:number count="tei:p|tei:lg|tei:list" />
                       </xsl:otherwise>
                     </xsl:choose>
                   </span>
                 </xsl:when>
               </xsl:choose>
-              <xsl:value-of select="text()"/>
+              <xsl:value-of select="text()" />
             </p>
-            <xsl:apply-templates select="child::tei:seg" mode="split"/>
+            <xsl:apply-templates select="child::tei:seg" mode="split" />
           </xsl:when>
+    <!--       <xsl:when test="@edrend">
+            <p>
+              <xsl:attribute name="class">
+                <xsl:text>l l</xsl:text>
+                <xsl:value-of select="@n" />
+                <xsl:if test="@rend='indent' or @rend='center' or $bookId='4' or $bookId='5' or $bookId='6'">
+                  <xsl:text> lIndent</xsl:text>
+                </xsl:if>
+              </xsl:attribute>
+              <span>
+                <xsl:attribute name="class">
+                  <xsl:text>choice tooltiptrigger ttChanges</xsl:text>
+                </xsl:attribute>
+                <xsl:choose>
+                  <xsl:when test="(@n mod 5) = 0 and ancestor::tei:div[@type='poem']">
+                    <span>
+                      <xsl:attribute name="class">
+                        <xsl:text>lNumber l</xsl:text>
+                        <xsl:value-of select="@n" />
+                      </xsl:attribute>
+                      <xsl:value-of select="@n" />
+                    </span>
+                  </xsl:when>
+                  <xsl:when test="count(preceding-sibling::tei:l)&lt;1 and (ancestor::tei:div[@type='main'] or ancestor::tei:div[@type='letter'] or not(ancestor::tei:div[@type]))">
+                    <span class="lNumber">
+                      <xsl:choose>
+                        <xsl:when test="$bookId='15'">
+                          <xsl:number count="tei:p|tei:lg|tei:list" level="any" from="//tei:body" />
+                        </xsl:when>
+                        <xsl:otherwise>
+                          <xsl:number count="tei:p|tei:lg|tei:list" />
+                        </xsl:otherwise>
+                      </xsl:choose>
+                    </span>
+                  </xsl:when>
+                </xsl:choose>
+                <span>
+                  <xsl:attribute name="class">
+                    <xsl:text>corr</xsl:text>
+                  </xsl:attribute>
+                  <xsl:apply-templates />
+                </span>
+              </span>
+              <span>
+                <xsl:attribute name="class">
+                  <xsl:text>tooltip changes</xsl:text>
+                </xsl:attribute>
+                <xsl:choose>
+                  <xsl:when test="@edrend='noIndent'">
+                    <xsl:text>indrag i originalet</xsl:text>
+                  </xsl:when>
+                  <xsl:when test="@edrend='indent'">
+                    <xsl:text>originalet saknar indrag</xsl:text>
+                  </xsl:when>
+                </xsl:choose>
+              </span>
+            </p>
+          </xsl:when>  -->
           <xsl:otherwise>
-    <p>
-      <xsl:attribute name="class">
-        <xsl:text>l l</xsl:text>
-        <xsl:value-of select="@n"/>
-        <xsl:if test="@rend='indent' or $bookId='4' or $bookId='5' or $bookId='6'">
-          <xsl:text> lIndent</xsl:text>
-        </xsl:if>
-      </xsl:attribute>
-      <xsl:choose>
-        <xsl:when test="(@n mod 5) = 0 and ancestor::tei:div[@type='poem']">
-          <span>
-            <xsl:attribute name="class">
-              <xsl:text>lNumber l</xsl:text>
-              <xsl:value-of select="@n"/>
-            </xsl:attribute>
-            <xsl:value-of select="@n"/>
-          </span>
-        </xsl:when>
-        <xsl:when test="count(preceding-sibling::tei:l)&lt;1 and (ancestor::tei:div[@type='main'] or ancestor::tei:div[@type='letter'] or not(ancestor::tei:div[@type]))">
-          <span class="lNumber">
-            <xsl:choose>
-              <xsl:when test="$bookId='15'">
-                <xsl:number count="tei:p|tei:lg|tei:list" level="any" from="//tei:body"/>
-              </xsl:when>
-              <xsl:otherwise>
-                <xsl:number count="tei:p|tei:lg|tei:list"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </span>
-        </xsl:when>
-      </xsl:choose>
-      <xsl:apply-templates/>
-    </p>
+            <p>
+              <xsl:attribute name="class">
+                <xsl:text>l l</xsl:text>
+                <xsl:value-of select="@n" />
+                <xsl:if test="@rend='indent' or @rend='center' or $bookId='4' or $bookId='5' or $bookId='6'">
+                  <xsl:text> lIndent</xsl:text>
+                </xsl:if>
+              </xsl:attribute>
+              <xsl:choose>
+                <xsl:when test="(@n mod 5) = 0 and ancestor::tei:div[@type='poem']">
+                  <span>
+                    <xsl:attribute name="class">
+                      <xsl:text>lNumber l</xsl:text>
+                      <xsl:value-of select="@n" />
+                    </xsl:attribute>
+                    <xsl:value-of select="@n" />
+                  </span>
+                </xsl:when>
+                <xsl:when test="count(preceding-sibling::tei:l)&lt;1 and (ancestor::tei:div[@type='main'] or ancestor::tei:div[@type='letter'] or not(ancestor::tei:div[@type]))">
+                  <span class="lNumber">
+                    <xsl:choose>
+                      <xsl:when test="$bookId='15'">
+                        <xsl:number count="tei:p|tei:lg|tei:list" level="any" from="//tei:body" />
+                      </xsl:when>
+                      <xsl:otherwise>
+                        <xsl:number count="tei:p|tei:lg|tei:list" />
+                      </xsl:otherwise>
+                    </xsl:choose>
+                  </span>
+                </xsl:when>
+              </xsl:choose>
+              <xsl:apply-templates />
+            </p>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
-    </xsl:choose>  
+    </xsl:choose>
   </xsl:template>
   
   <!-- Changed strofe behaviour
@@ -461,7 +507,14 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
   <xsl:template match="tei:p">
-    <xsl:call-template name="paragraph" />
+    <!--    <xsl:choose>
+     <xsl:when test="@edrend">
+        <xsl:call-template name="paragraph_edrend"></xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>  -->
+        <xsl:call-template name="paragraph" />
+   <!--    </xsl:otherwise>
+    </xsl:choose>  -->
   </xsl:template>
 
   <xsl:template name="paragraph">
@@ -621,6 +674,78 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
     </p>
     </xsl:if>
   </xsl:template>
+  
+  <xsl:template name="paragraph_edrend">
+    <xsl:variable name="paragraphNumber">
+      <xsl:choose>
+        <xsl:when test="contains(@xml:id, '_')">
+          <xsl:value-of select="substring-after(@xml:id, '_')" />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="substring-after(@xml:id, 'p')" />
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    <p>
+      <span>
+        <xsl:attribute name="class">
+          <xsl:text>paragraph_number p</xsl:text>
+          <xsl:value-of select="$paragraphNumber" />
+        </xsl:attribute>
+        <xsl:value-of select="$paragraphNumber" />
+      </span>
+      <xsl:choose>
+        <xsl:when test="@xml:lang">
+          <span class="foreign tooltiptrigger ttLang">
+            <xsl:attribute name="lang">
+              <xsl:value-of select="@xml:lang" />
+            </xsl:attribute>
+            <span>
+              <xsl:attribute name="class">
+                <xsl:text>choice tooltiptrigger ttChanges</xsl:text>
+              </xsl:attribute>
+              <xsl:apply-templates />
+            </span>
+          </span>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tooltip changes</xsl:text>
+            </xsl:attribute>
+            <xsl:choose>
+              <xsl:when test="@edrend='noIndent'">
+                <xsl:text>indrag i originalet</xsl:text>
+              </xsl:when>
+              <xsl:when test="@edrend='indent'">
+                <xsl:text>originalet saknar indrag</xsl:text>
+              </xsl:when>
+            </xsl:choose>
+          </span>
+          <xsl:call-template name="xmlLang" />
+        </xsl:when>
+        <xsl:otherwise>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>choice tooltiptrigger ttChanges</xsl:text>
+            </xsl:attribute>
+            <xsl:apply-templates />
+          </span>
+          <span>
+            <xsl:attribute name="class">
+              <xsl:text>tooltip changes</xsl:text>
+            </xsl:attribute>
+            <xsl:choose>
+              <xsl:when test="@edrend='noIndent'">
+                <xsl:text>indrag i originalet</xsl:text>
+              </xsl:when>
+              <xsl:when test="@edrend='indent'">
+                <xsl:text>originalet saknar indrag</xsl:text>
+              </xsl:when>
+            </xsl:choose>
+          </span>
+        </xsl:otherwise>
+      </xsl:choose>
+    </p>
+  </xsl:template>
 
   <xsl:template match="tei:item">
     <xsl:choose>
@@ -765,6 +890,10 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:text>original: </xsl:text>
           <xsl:apply-templates mode="tooltip"/>
           <!--<xsl:value-of select="tei:sic"/>-->
+          <xsl:if test="child::tei:reg[@source]">
+            <xsl:text>; källa: </xsl:text>
+            <xsl:value-of select="child::tei:reg/@source"/>
+          </xsl:if>
         </span>
       </xsl:when>
       <xsl:when test="child::tei:orig">
@@ -772,6 +901,10 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
           <xsl:text>original: </xsl:text>
           <xsl:apply-templates mode="tooltip"/>
           <!--<xsl:value-of select="tei:orig"/>-->
+          <xsl:if test="child::tei:reg[@source]">
+            <xsl:text>; källa: </xsl:text>
+            <xsl:value-of select="child::tei:reg/@source"/>
+          </xsl:if>
         </span>
       </xsl:when>
       <xsl:when test="child::tei:expan">
@@ -783,7 +916,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
   <xsl:template match="tei:orig|tei:sic|tei:expan" mode="tooltip">
-    <xsl:apply-templates/>
+    <xsl:apply-templates mode="tooltip"/>
   </xsl:template>
 
   <xsl:template match="tei:corr|tei:reg|tei:abbr" mode="tooltip" />
@@ -935,7 +1068,11 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:apply-templates/>
     </span>
     <span class="tooltip ttChanges">
-      <xsl:call-template name="attReasonSupplied"/>
+      <xsl:call-template name="attReasonSupplied">
+        <xsl:with-param name="source">
+          <xsl:value-of select="@source"/>
+        </xsl:with-param>
+      </xsl:call-template>
     </span>
   </xsl:template>
 
@@ -979,6 +1116,21 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       <xsl:otherwise>
         <span>
           <xsl:call-template name="attRend"/>
+          <xsl:apply-templates/>
+        </span>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+  
+  <xsl:template match="tei:hi" mode="tooltip">
+    <xsl:choose>
+      <xsl:when test="@rend='raised'">
+        <xsl:text>:</xsl:text>
+        <xsl:apply-templates/>
+      </xsl:when>
+      <xsl:otherwise>
+        <span>
+          <xsl:call-template name="attRendTooltip"/>
           <xsl:apply-templates/>
         </span>
       </xsl:otherwise>
