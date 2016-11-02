@@ -15,4 +15,9 @@ If you add this to your composer.json you can include these xslt transforations 
     }
 ...
 ~~~~
-   
+Then you can get the newest update by issuing the command
+
+~~~~
+composer update
+
+~~~~
