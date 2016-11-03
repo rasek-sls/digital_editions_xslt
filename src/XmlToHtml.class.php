@@ -1,5 +1,5 @@
-namespace Slsfi\\DigitalEditions\\XSLT;
-
+<?php
+namespace Slsfi\DigitalEditions\XSLT;
 
 abstract class XmlToHtml {
 

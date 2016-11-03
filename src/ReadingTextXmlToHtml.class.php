@@ -1,5 +1,7 @@
-namespace Slsfi\\DigitalEditions\\XSLT;
+<?php
+namespace Slsfi\DigitalEditions\XSLT;
 
 class ReadingTextXmlToHtml extends XmlToHtml {
     
 }
+
