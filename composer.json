@@ -2,6 +2,8 @@
     "name": "slsfi/digital-editions-xslt",
     "description": "XSLT style sheets for SLS digital editions",
     "autoload": {
-        "psr-4": {"Slsfi\\DigitalEditions\\Xslt\\": "src/"}
+        "psr-0": {
+          "Slsfi": "src/"
+        }
     }
 }
