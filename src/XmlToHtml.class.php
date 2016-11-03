@@ -1,6 +1,15 @@
 <?php
-namespace Slsfi\DigitalEditions\XSLT;
+namespace Slsfi\DigitalEditions\Xslt;
 
 abstract class XmlToHtml {
 
+    // Force Extending class to define this method
+    abstract protected function getValue();
+    abstract protected function prefixValue($prefix);
+
+    // Common method
+    public function printOut() {
+        print $this->getValue() . "\n";
+    }
+    
 }
