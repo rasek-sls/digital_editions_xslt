@@ -2,8 +2,6 @@
     "name": "slsfi/digital_editions/xslt",
     "description": "XSLT style sheets for SLS digital editions",
     "autoload": {
-        "classmap": [
-            "src/"
-        ]
+        "psr-4": {"Slsfi\\DigitalEditions\\Xslt\\": "src/"}
     }
 }
