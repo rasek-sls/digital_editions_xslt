@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt />
+      <publicationStmt>
+        <publisher>Zacharias Topelius Skrifter</publisher>
+      </publicationStmt>
+      <notesStmt />
+      <sourceDesc>
+        <p />
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc><classDecl><taxonomy xml:id="cat_genre"><category xml:id="cg_poem"><catDesc>Poem</catDesc></category><category xml:id="cg_letter"><catDesc>Letter</catDesc></category><category xml:id="cg_childrensliterature"><catDesc>Children's literature</catDesc></category><category xml:id="cg_diary"><catDesc>Diary</catDesc></category><category xml:id="cg_nonfiction"><catDesc>Non-fiction</catDesc></category><category xml:id="cg_prose"><catDesc>Prose</catDesc></category><category xml:id="cg_drama"><catDesc>Drama</catDesc></category></taxonomy><taxonomy xml:id="cat_editorial"><category xml:id="ce_readingtext"><catDesc>Reading text</catDesc></category><category xml:id="ce_introduction"><catDesc>Introduction</catDesc></category><category xml:id="ce_titlepage"><catDesc>Title Page</catDesc></category><category xml:id="ce_annotations"><catDesc>Annotations</catDesc></category><category xml:id="ce_basetext"><catDesc>Base text</catDesc></category><category xml:id="ce_version"><catDesc>Version</catDesc></category><category xml:id="ce_manuscript"><catDesc>Manuscript</catDesc></category></taxonomy></classDecl></encodingDesc><profileDesc>
+      <handNotes>
+        <handNote />
+        <handNote />
+      </handNotes>
+    <creation><idNo>1_19</idNo><idNo type="bookid">1</idNo><title type="main">Kommentarer till Alla / vill de någonting av mig …</title></creation><textClass><catRef target="ce_annotations" /></textClass></profileDesc>
+    <revisionDesc>
+      <change>
+      </change>
+      <change>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body xml:space="preserve">
+<div type="comment">
+
+      </div>
+	  <div type="notes">
+	  <note type="editor" id="en40" target="#start40"><seg type="notePosition">l1</seg><seg type="noteLemma">Alla</seg><seg type="noteText">
+	testi</seg></note></div>
+    </body>
+  </text>
+</TEI>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TEI xmlns="http://www.sls.fi/tei">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt/>
+      <publicationStmt>
+        <publisher>Zacharias Topelius Skrifter</publisher>
+      </publicationStmt>
+      <notesStmt />
+      <sourceDesc>
+        <p />
+      </sourceDesc>
+    </fileDesc>
+    <profileDesc>
+      <handNotes>
+        <handNote />
+        <handNote />
+      </handNotes>
+    </profileDesc>
+    <revisionDesc>
+      <change>
+      </change>
+      <change>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+	  <div type="comment">
+	  </div>
+	  <div type="notes">
+	  </div>
+    </body>
+  </text>
+</TEI>

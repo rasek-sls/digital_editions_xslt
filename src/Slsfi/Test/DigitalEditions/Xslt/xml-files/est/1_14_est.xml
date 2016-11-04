@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?><TEI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.tei-c.org/ns/1.0 file:/O:/F%C3%B6rlaget/HPS/Valideringsscheman/HPS_l%C3%A4stext.xsd"
+        xmlns="http://www.tei-c.org/ns/1.0"><!-- inför lästextschema -->
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Högst / över gudar och djävlar</title>
+                <!-- Studentbladet nr 14, 1927, s. 226 -->
+                
+                <respStmt>
+                    <resp>lästextfil skapad av:</resp>
+                    <name>Per Stam (2015-10-15)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>transkribering och grundkodning:</resp>
+                    <name>Elisa Veit (2015-03-24)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>första kollationering:</resp>
+                    <name>Ville Lindholm (2015-04-30)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>semantisk kodning:</resp>
+                    <name>Förnamn Efternamn (ÅÅÅÅ-MM-DD)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>andra kollationering:</resp>
+                    <name>Per Stam (2015-06-24) </name>
+                </respStmt>
+                <respStmt>
+                    <resp>edering:</resp>
+                    <name>Per Stam (2015-10-15)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Henry Parlands Skrifter</publisher>
+                <idno type="dblink"><!-- verkdatabas-id --></idno>
+            </publicationStmt>
+            <sourceDesc>
+                <p>HLA:slsa945.12_ent.ms.1</p>
+            </sourceDesc>
+        </fileDesc>
+        <profileDesc>
+        </profileDesc>
+    </teiHeader>
+    <text><!-- Citattecken » Tankstreck – Apostrof ’ Typografiska citattecken (&#x201d;) ” -->
+        <body xml:space="preserve">
+            <pb facs="slsa945.12_ms.1-2.tif"/>
+
+
+              <div type="poem">
+
+                  <lg>
+                         <l>Högst</l>
+                         <l>över gudar och djävlar</l>
+                         <l>skrattar en gammal gud</l>
+                         <l>dag och natt</l>
+                         <l>outsinbart skallande</l>
+                     </lg>
+                     <lg>
+                         <l>Sin ungdoms dårskap</l>
+                         <l>minns den gamle</l>
+                         <l>hundratusenåriga skrattsalvor</l>
+                         <l>rulla genom evigheten:</l>
+                     </lg>
+                     <lg>
+                         <l>Jag skapade världen</l>
+                         <l>och sedan</l>
+                         <l>två människor –</l>
+                         <l>efter mitt och apors beläte</l>
+                         <l>hahahaha!</l>
+                     </lg>
+
+              </div>
+          
+        </body>
+    </text>
+</TEI>
+

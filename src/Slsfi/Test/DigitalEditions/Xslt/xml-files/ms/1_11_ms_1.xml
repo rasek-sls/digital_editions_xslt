@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader>
+        <fileDesc>
+            <titleStmt>
+                <title>Ms P 8: SLSA 945.5; 5/10 [1927]</title>
+                <respStmt>
+                    <resp>transkribering och grundkodning:</resp>
+                    <name>Ville Lindholm (2015-06-02)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>första kollationering:</resp>
+                    <name>Elisa Veit (2015-10-09)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>semantisk kodning:</resp>
+                    <name>Ville Lindholm (2015-06-02)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>andra kollationering:</resp>
+                    <name>Carola Herberts (2016-04-01)</name>
+                </respStmt>
+                <respStmt>
+                    <resp>ändringar efter andra kollationering:</resp>
+                    <name>Elisa Veit (2016-05-04)</name>
+                </respStmt>
+            </titleStmt>
+            <publicationStmt>
+                <publisher>Henry Parlands Skrifter</publisher>
+            </publicationStmt>
+            <sourceDesc>
+                <p>XXX HLA:slsa945_5_12</p><!-- VL: Faksimilen inte ännu i Arkiva, har ingen enhets-ID. -->
+            </sourceDesc>
+        </fileDesc>
+        <encodingDesc><classDecl><taxonomy xml:id="cat_genre"><category xml:id="cg_poem"><catDesc>Poem</catDesc></category><category xml:id="cg_letter"><catDesc>Letter</catDesc></category><category xml:id="cg_childrensliterature"><catDesc>Children's literature</catDesc></category><category xml:id="cg_diary"><catDesc>Diary</catDesc></category><category xml:id="cg_nonfiction"><catDesc>Non-fiction</catDesc></category><category xml:id="cg_prose"><catDesc>Prose</catDesc></category><category xml:id="cg_drama"><catDesc>Drama</catDesc></category></taxonomy><taxonomy xml:id="cat_editorial"><category xml:id="ce_readingtext"><catDesc>Reading text</catDesc></category><category xml:id="ce_introduction"><catDesc>Introduction</catDesc></category><category xml:id="ce_titlepage"><catDesc>Title Page</catDesc></category><category xml:id="ce_annotations"><catDesc>Annotations</catDesc></category><category xml:id="ce_basetext"><catDesc>Base text</catDesc></category><category xml:id="ce_version"><catDesc>Version</catDesc></category><category xml:id="ce_manuscript"><catDesc>Manuscript</catDesc></category></taxonomy></classDecl></encodingDesc><profileDesc>
+            <handNotes>
+                <handNote medium="black-ink" id="HP">Henry Parland</handNote>
+                <handNote medium="pencil" id="HP2">Henry Parland</handNote>
+                <handNote medium="pencil" id="GB">Gunnar Björling</handNote>
+                <handNote medium="pencil" id="h1">tillsvidare oidentifierad</handNote>
+            </handNotes>
+        <creation><idNo>1_11</idNo><idNo type="bookid">1</idNo><title type="main">Ej för teater - Ms P 8: SLSA 945.5; 5/10 [1927]</title></creation><textClass><catRef target="ce_manuscript" /></textClass></profileDesc>
+    </teiHeader>
+    <text><!-- Tyska citattecken „“ (&#x201e; och &#x201c;) Tankstreck – Apostrof ’ Typografiska citattecken (&#x201d;) ” -->
+        <body xml:space="preserve">
+             <div type="ficprose">
+                <pb facs="HLA:slsa945_5_12-007.tif" />
+                 <note type="editorial" hand="#GB" medium="pencil" place="rightMargin">ⅹ</note><!-- gissningsvis GB (EV) -->
+                <head xml:id="h1">(Ej för Teater.)</head>
+                <p xml:id="p1">Stort öde rum. <del>Kala väggar med</del> <subst><del>d</del><add>D</add></subst>örrar <del>ledande</del> ut i mörkret. Två herrar i smoking på var sin stol. <add>Den ena fullkomligt lik den andra.</add> På bordet mellan dem en <add place="inline">först svagt, sen allt</add><!-- EV lagt till add efter koll2 --> stark<subst><del>t</del><add place="ontop">a</add></subst>re lysande elektrisk lampa.</p>
+                 <milestone unit="part" />
+                 <p rend="noIndent" xml:id="p2"><hi rend="underline">I Herrn</hi>:</p>
+                 <p xml:id="p3">Minns du henne?</p>
+                 <addSpan spanTo="#add51" place="rightMargin" />
+                 <p rend="noIndent" xml:id="p4">II Herrn: rycker till, nickar<add place="inline" medium="pencil">.</add><!-- EV lagt till punkten efter koll2 --> <subst medium="pencil"><del>fundersamt.</del><add><del>sedan</del></add></subst></p>
+                 <anchor id="add51" />
+                 <p rend="noIndent" xml:id="p5"><hi rend="underline">I Herrn</hi> Hon <subst medium="pencil"><del>var</del><add>kom</add></subst> som en skugga – ingen visste varifrån<del medium="pencil"> hon kom</del>. <del>Ibland om kvällen satt hon plötsligt <subst><del>mitt bland</del><add>hos</add></subst> oss och hennes</del><add medium="pencil">Hon hade ett</add> huvud var trött som en blomknopp<add medium="pencil"> och hennes steg voro så skygga</add>. Hon sade aldrig ett ord – blott såg på oss med sina <add medium="pencil" hand="#GB">be<!-- VL: tror inte det är HP:s hand --></add>slöjade, <hi rend="underline" medium="pencil" hand="#h1">skygga</hi> ögon.</p>
+                 <p rend="noIndent" xml:id="p6"><hi rend="underline">II Herrn</hi>: (liksom vaknande ur sömnen) Men – – –</p>
+                 <p rend="noIndent" xml:id="p7"><hi rend="underline">I Herren</hi>: Ibland grät hon. Hennes tårar voro så underliga. Svala och sövande<del medium="pencil"> voro de</del>, som havet vid daggryningen<add medium="pencil"> voro de</add>. Minns du?</p>
+                 <p rend="noIndent" xml:id="p8"><hi rend="underline">II Herrn</hi>: Men. – –</p>
+                 <p rend="noIndent" xml:id="p9"><hi rend="underline">I Herrn</hi>: En gång såg hon så underligt på mig. Jag tror, jag förstod ej vad hon menade, ty hon grät. Det var sista gången jag kommer ihåg att jag sett henne. Kanske hon ville säga adjö. – –</p>
+                 <milestone unit="part" />
+                 <p xml:id="p10">Tystnad. Herrn 2 <subst medium="pencil"><del>stirrar</del><add>ser</add></subst> sökande i <add>det tilltagande</add> lampljuset, herrn ett <del medium="pencil">ser</del> drömmande framför sig.</p>
+                 <pb facs="HLA:slsa945_5_12-008.tif" />
+                 <p rend="noIndent" xml:id="p11"><hi rend="underline">II Herrn:</hi> Men – – – jag tror – – vi ha aldrig sett henne. <subst medium="pencil"><del>Jag</del><add>Vi</add></subst> minns henne så väl. Men jag tror – – vi ha aldrig sett henne.</p>
+                 <p rend="noIndent" xml:id="p12"><hi rend="underline">I Herr<unclear resp="EV" reason="writing">n</unclear></hi><!-- CH:Herren? EV: Mera troligt Herrn --> (ser uttryckslöst framför sig och mumlar som en <sic>utantillläxa</sic>): Vi <del><unclear reason="overstrike" resp="EV"><subst><del><gap reason="overwritten" unit="letters" extent="1" /></del><add place="ontop">m</add></subst>inn</unclear></del> minns henne så väl, men vi ha aldrig sett henne.</p>
+                 <p xml:id="p13">De stirra båda i lampljuset och liksom glida in i varandra. I Herrn går slutligen <del medium="pencil">helt</del> opp i II herrn. Denna sitter orörlig, med huvudet lutat mot handen, <subst medium="pencil"><del>försänkt i djupa funderingar.</del><add>liksom bländad av lampskenet.</add></subst> Efter ca 1 min ridå.</p>
+                 <dateline><date when="1927-10-05">5/X.<add medium="pencil" place="inline" hand="#h1">27</add></date></dateline>
+                 <pb facs="HLA:slsa945_5_12-009.tif" />
+                 <pb facs="HLA:slsa945_5_12-010.tif" />
+             </div>
+        </body>
+    </text>
+</TEI>
+
