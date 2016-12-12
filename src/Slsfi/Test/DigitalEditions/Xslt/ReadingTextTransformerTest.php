@@ -43,7 +43,14 @@ class ReadingTextTransformerTest extends \PHPUnit_Framework_TestCase
         $html = $object->getHTML();
 
         $this->assertContains('<p class=', $html);
-
     }
+
+    public function testGetHTML_withOldNamespace_shouldUseNewNamespace() {
+        $xmlPath = __DIR__ . "/../../../Test/DigitalEditions/Xslt/xml-files/est/10_1_est.xml";
+        $object = new ReadingTextTransformer($xmlPath);
+        $html = $object->getHTML();
+        $this->assertContains('<p class=', $html);
+    }
+
 }
 

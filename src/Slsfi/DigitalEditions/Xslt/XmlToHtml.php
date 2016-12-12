@@ -28,7 +28,12 @@ abstract class XmlToHtml {
     public function getHTML() {
         // Load the XML source
         $xml = new \DOMDocument;
-        $xml->load($this->xmlFilePath);
+        $xml->loadXML(
+            str_replace('xmlns="http://www.sls.fi/tei"',
+                        'xmlns="http://www.tei-c.org/ns/1.0"',
+                        file_get_contents($this->xmlFilePath)
+            )
+        );
 
         $xsl = new \DOMDocument;
         $xsl->load($this->xslFilePath);
