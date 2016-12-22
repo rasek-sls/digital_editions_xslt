@@ -98,6 +98,11 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
   
    <xsl:template match="tei:div">
+     <div>
+       <xsl:attribute name="id">
+         <xsl:value-of select="@id"/>
+       </xsl:attribute>
+
 
        <xsl:if test="/tei:TEI/tei:teiHeader/tei:profileDesc/tei:creation/tei:title[@type='readingtext'] and @type='letter'">
          <h3 class="title left">
@@ -115,6 +120,7 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
         <xsl:apply-templates/>
       </xsl:otherwise>
     </xsl:choose>
+     </div>
   </xsl:template>
 
   <xsl:template match="tei:lg">
