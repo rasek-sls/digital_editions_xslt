@@ -42,14 +42,15 @@ class CommentariesTransformerTest extends \PHPUnit_Framework_TestCase
         $object = new CommentariesTransformer($xmlPath);
         $html = $object->getHTML();
 
-        $this->assertContains('<h3 class=', $html);
+        $this->assertContains('<span class=', $html);
+        $this->assertContains('naturliga ordningar', $html);
     }
 
     public function testGetHTML_withOldNamespace_shouldUseNewNamespace() {
         $xmlPath = __DIR__ . "/../../../Test/DigitalEditions/Xslt/xml-files/com/15_677_com.xml";
         $object = new CommentariesTransformer($xmlPath);
         $html = $object->getHTML();
-        $this->assertContains('<h3 class=', $html);
+        $this->assertContains('<span class=', $html);
     }
 
 }
