@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TEI xmlns="http://www.sls.fi/tei">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt />
+      <publicationStmt>
+        <publisher>Zacharias Topelius Skrifter</publisher>
+      </publicationStmt>
+      <notesStmt />
+      <sourceDesc>
+        <p />
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc><classDecl><taxonomy xml:id="cat_genre"><category xml:id="cg_poem"><catDesc>Poem</catDesc></category><category xml:id="cg_letter"><catDesc>Letter</catDesc></category><category xml:id="cg_childrensliterature"><catDesc>Children's literature</catDesc></category><category xml:id="cg_diary"><catDesc>Diary</catDesc></category><category xml:id="cg_nonfiction"><catDesc>Non-fiction</catDesc></category><category xml:id="cg_prose"><catDesc>Prose</catDesc></category><category xml:id="cg_drama"><catDesc>Drama</catDesc></category></taxonomy><taxonomy xml:id="cat_editorial"><category xml:id="ce_readingtext"><catDesc>Reading text</catDesc></category><category xml:id="ce_introduction"><catDesc>Introduction</catDesc></category><category xml:id="ce_titlepage"><catDesc>Title Page</catDesc></category><category xml:id="ce_annotations"><catDesc>Annotations</catDesc></category><category xml:id="ce_basetext"><catDesc>Base text</catDesc></category><category xml:id="ce_version"><catDesc>Version</catDesc></category><category xml:id="ce_manuscript"><catDesc>Manuscript</catDesc></category></taxonomy></classDecl></encodingDesc><profileDesc>
+      <handNotes>
+        <handNote />
+        <handNote />
+      </handNotes>
+    <creation><idNo>15_677</idNo><idNo type="bookid">15</idNo><title type="main">Kommentarer till Topelius, Zacharias d.ä. och Catharina Sofia – ZT 15.5.1830</title><title type="readingtext">Zacharias d.ä. och Catharina Sofia  Topelius till Zacharias Topelius 15.5.1830</title><placeName type="sender">Nykarleby</placeName><placeName type="adressee">Uleåborg</placeName><persName type="sender">Topelius, Zacharias d.ä. och Catharina Sofia</persName><persName type="adressee">Topelius, Zacharias</persName></creation><textClass><catRef target="cg_letter" /><catRef target="ce_annotations" /></textClass></profileDesc>
+    <revisionDesc>
+      <change>
+      </change>
+      <change>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body>
+	  <div type="comment">
+	  </div>
+	  <div type="notes">
+	  <note type="editor" id="en20471" target="#start20471"><seg type="notePosition">p3</seg><seg type="noteLemma">ubi soles melius lucent</seg><seg type="noteText">
+	(lat.) där solen skönare lyser.</seg></note><note type="editor" id="en20472" target="#start20472"><seg type="notePosition">p3</seg><seg type="noteLemma">patria arva carissima</seg><seg type="noteText">
+	(lat.) är fädernejorden kärast.</seg></note><note type="editor" id="en20473" target="#start20473"><seg type="notePosition">p5</seg><seg type="noteLemma">ergo caveto</seg><seg type="noteText">
+	(lat.) Alltså, akta dig!</seg></note><note type="editor" id="en20474" target="#start20474"><seg type="notePosition">p5</seg><seg type="noteLemma">parentium</seg><seg type="noteText">
+	(lat.) föräldrarnas.</seg></note><note type="editor" id="en20475" target="#start20475"><seg type="notePosition">p5</seg><seg type="noteLemma">vale</seg><seg type="noteText">
+	(lat.) må väl.</seg></note><note type="editor" id="en20476" target="#start20476"><seg type="notePosition">p5</seg><seg type="noteLemma">dico</seg><seg type="noteText">
+	(lat.) säga.</seg></note><note type="editor" id="en20477" target="#start20477"><seg type="notePosition">p6</seg><seg type="noteLemma">prima principia</seg><seg type="noteText">
+	(lat.) första begrepp.</seg></note><note type="editor" id="en20478" target="#start20478"><seg type="notePosition">p6</seg><seg type="noteLemma">ordines naturales</seg><seg type="noteText">
+	(lat.) naturliga ordningar.</seg></note><note type="editor" id="en20479" target="#start20479"><seg type="notePosition">p6</seg><seg type="noteLemma">artificiales</seg><seg type="noteText">
+	(lat.) konstgjorda.</seg></note><note type="editor" id="en20480" target="#start20480"><seg type="notePosition">p6</seg><seg type="noteLemma">så väl till ordines naturales som artificiales</seg><seg type="noteText">
+	Här avses de av Carl von Linné skapade växtsystemen, den föregående indelade växter på basis av förmodade ursprungsformer och det senare avser Linnés sexualsystem.</seg></note><note type="editor" id="en20481" target="#start20481"><seg type="notePosition">p7</seg><seg type="noteLemma">Primula veris</seg><seg type="noteText">
+	(lat.) gullviva.</seg></note><note type="editor" id="en20486" target="#start20486"><seg type="notePosition">p2</seg><seg type="noteLemma">hutleri</seg><seg type="noteText">
+	slarv.</seg></note><note type="editor" id="en20488" target="#start20488"><seg type="notePosition">p2</seg><seg type="noteLemma">Apoth. Bastmans ... utlyst – för skulder</seg><seg type="noteText">
+	Bastmans ekonomi hade redan tidigare varit dålig. Han köpte apoteket redan 1824, men fick sitt privilegiebrev först 1829 då han genom arvet efter sin hustru kunde inlösa apoteket av den tidigare ägaren Adolf Fredrik Forssell.</seg></note></div>
+    </body>
+  </text>
+</TEI>
