@@ -25,7 +25,7 @@ abstract class XmlToHtml {
     }
 
     // Common method
-    public function getHTML() {
+    public function getHTML($params = []) {
         // Load the XML source
         $xml = new \DOMDocument;
         $xml->loadXML(
@@ -41,6 +41,10 @@ abstract class XmlToHtml {
         // Configure the transformer
         $proc = new \XSLTProcessor;
         $proc->importStyleSheet($xsl); // attach the xsl rules
+
+        foreach ($params as $name => $value) {
+            $proc->setParameter('', $name, $value);
+        }
 
         return $proc->transformToXML($xml);
 

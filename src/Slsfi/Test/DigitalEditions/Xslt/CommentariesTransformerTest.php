@@ -38,19 +38,23 @@ class CommentariesTransformerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetHTML_validFilePath_shouldReturnHTML() {
 
-        $xmlPath = __DIR__ . "/../../../Test/DigitalEditions/Xslt/xml-files/com/15_677_com.xml";
+        $xmlPath = __DIR__ . "/xml-files/com/4_1_com.xml";
+        $estPath = __DIR__ . "/xml-files/est/4_1_est.xml";
         $object = new CommentariesTransformer($xmlPath);
-        $html = $object->getHTML();
+
+        echo $estPath;
+        
+        $params = [
+                "sectionId" => "en5696",
+                "bookId" => "4",
+                "fileDiv" => "1",
+                "commentTitle" => "FOO",
+                "estDocument" => "file://" . $estPath];
+
+        $html = $object->getHTML($params);
 
         $this->assertContains('<span class=', $html);
-        $this->assertContains('naturliga ordningar', $html);
-    }
-
-    public function testGetHTML_withOldNamespace_shouldUseNewNamespace() {
-        $xmlPath = __DIR__ . "/../../../Test/DigitalEditions/Xslt/xml-files/com/15_677_com.xml";
-        $object = new CommentariesTransformer($xmlPath);
-        $html = $object->getHTML();
-        $this->assertContains('<span class=', $html);
+        $this->assertContains('Kommentar till FOO', $html);
     }
 
 }

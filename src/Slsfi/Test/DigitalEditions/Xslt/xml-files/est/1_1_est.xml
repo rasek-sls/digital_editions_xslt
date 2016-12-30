@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.sls.fi/tei">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Ljungblommor I, Hfrs 1845</title>
+        <respStmt>
+          <resp>Kodning:</resp>
+          <name>CE (07-10-2009)</name>
+        </respStmt>
+        <respStmt>
+          <resp>Granskad av:</resp>
+          <name>TG (26-10-2009)</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Zacharias Topelius Skrifter</publisher>
+      </publicationStmt>
+      <notesStmt />
+      <sourceDesc>
+        <p />
+      </sourceDesc>
+    </fileDesc>
+    <encodingDesc><classDecl><taxonomy xml:id="cat_genre"><category xml:id="cg_poem"><catDesc>Poem</catDesc></category><category xml:id="cg_letter"><catDesc>Letter</catDesc></category><category xml:id="cg_childrensliterature"><catDesc>Children's literature</catDesc></category><category xml:id="cg_diary"><catDesc>Diary</catDesc></category><category xml:id="cg_nonfiction"><catDesc>Non-fiction</catDesc></category><category xml:id="cg_prose"><catDesc>Prose</catDesc></category><category xml:id="cg_drama"><catDesc>Drama</catDesc></category></taxonomy><taxonomy xml:id="cat_editorial"><category xml:id="ce_readingtext"><catDesc>Reading text</catDesc></category><category xml:id="ce_introduction"><catDesc>Introduction</catDesc></category><category xml:id="ce_titlepage"><catDesc>Title Page</catDesc></category><category xml:id="ce_annotations"><catDesc>Annotations</catDesc></category><category xml:id="ce_basetext"><catDesc>Base text</catDesc></category><category xml:id="ce_version"><catDesc>Version</catDesc></category><category xml:id="ce_manuscript"><catDesc>Manuscript</catDesc></category></taxonomy></classDecl></encodingDesc><profileDesc>
+      <handNotes>
+        <handNote />
+        <handNote />
+      </handNotes>
+    <creation><idNo>1_1</idNo><idNo type="bookid">1</idNo><title type="main">Ljungblommor</title></creation><textClass><catRef target="cg_poem" /><catRef target="ce_readingtext" /></textClass></profileDesc>
+    <revisionDesc>
+      <change>
+      </change>
+      <change>
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <body xml:space="preserve">
+      <!-- – » ’ -->
+      <div type="poem">
+        <pb type="orig unprinted" n="1" />
+        <pb type="ZTS" n="3" />
+        <head xml:id="h1">Ljungblommor.</head>
+        <lg xml:id="lg1">
+          <l n="1">Vilda skogen har sin blomma</l>
+          <l n="2">Och sin doft har ödemarken,</l>
+          <l n="3">Ljungen har sin bleka rodnad,</l>
+          <l n="4">Heden äger ock sin glädje;</l>
+          <pb type="orig unprinted" n="2" />
+          <l n="5">Och det rika menskohjertat,</l>
+          <l n="6">
+            <anchor xml:id="start350" />Skall, mer armt än ödemarken,</l>
+          <l n="7">Fattigt mer än sorgsna heden,</l>
+          <l n="8">Det ej sina blommor bära,</l>
+          <l n="9">Sjelf sin ljufva tröst ej nära?<anchor xml:id="end350" /></l>
+        </lg>
+        <lg xml:id="lg2">
+          <l n="10">
+            <anchor xml:id="start357" />Några sånger har jag sjungit,</l>
+          <l n="11">När i bröstet hjertat brände,</l>
+          <l n="12">
+            <anchor xml:id="start356" />Sjungit dem för <anchor xml:id="start351" /><persName>Ellis</persName><anchor xml:id="end351" /> glädje</l>
+          <l n="13">Och för <anchor xml:id="start352" /><persName>Ainas</persName><anchor xml:id="end352" /> aftontankar;</l>
+          <l n="14">
+            <anchor xml:id="start353" />
+            <persName>Selmas</persName>
+            <anchor xml:id="end353" /> panna dervid ljusnat,</l>
+          <l n="15">
+            <anchor xml:id="start354" />
+            <persName>Fannys</persName>
+            <anchor xml:id="end354" /> ömma ögon skimrat,</l>
+          <l n="16">
+            <anchor xml:id="start355" />
+            <persName corresp="pe10">Emmas</persName>
+            <anchor xml:id="end355" /> blida blåa blickar<anchor xml:id="end356" /></l>
+          <l n="17">Klarare än stjernor strålat.<anchor xml:id="end357" /></l>
+          <l n="18">Så i vackra ögons värma</l>
+          <l n="19">Sångerna likt drifvor smultit,</l>
+          <l n="20">Runnit upp som morgondrömmar </l>
+          <l n="21">I ett vårligt hjertas kärlek.</l>
+          <l n="22">Nu jag samlat har de späda,</l>
+          <l n="23">
+            <anchor xml:id="start358" />Skickar dem åt <placeName xml:lang="fin" corresp="pl62">Suomis</placeName> flickor,<anchor xml:id="end358" /></l>
+          <l n="24">Att en sorgsen stund fördrifva,</l>
+          <l n="25">Att i vårens doft och längtan </l>
+          <l n="26">Sångens ro de hulda gifva.</l>
+        </lg>
+        <dateline>
+          <date when="1845">1845.</date>
+        </dateline>
+      </div>
+      
+    </body>
+  </text>
+</TEI>
