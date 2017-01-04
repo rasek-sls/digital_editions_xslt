@@ -25,15 +25,19 @@ abstract class XmlToHtml {
     }
 
     // Common method
-    public function getHTML($params = []) {
+    public function getHTML($params = [], $replace_ns = true) {
         // Load the XML source
         $xml = new \DOMDocument;
-        $xml->loadXML(
-            str_replace('xmlns="http://www.sls.fi/tei"',
-                        'xmlns="http://www.tei-c.org/ns/1.0"',
-                        file_get_contents($this->xmlFilePath)
-            )
-        );
+        if ($replace_ns) {
+            $xml->loadXML(
+                str_replace('xmlns="http://www.sls.fi/tei"',
+                            'xmlns="http://www.tei-c.org/ns/1.0"',
+                            file_get_contents($this->xmlFilePath)
+                )
+            );
+        } else {
+            $xml->loadXML(file_get_contents($this->xmlFilePath));
+        }
 
         $xsl = new \DOMDocument;
         $xsl->load($this->xslFilePath);

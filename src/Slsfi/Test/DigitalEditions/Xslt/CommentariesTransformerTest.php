@@ -38,23 +38,30 @@ class CommentariesTransformerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetHTML_validFilePath_shouldReturnHTML() {
 
-        $xmlPath = __DIR__ . "/xml-files/com/4_1_com.xml";
-        $estPath = __DIR__ . "/xml-files/est/4_1_est.xml";
+        $xmlPath = __DIR__ . "/xml-files/com/4_7_com.xml";
+        $estPath = __DIR__ . "/xml-files/est/4_7_est.xml";
         $object = new CommentariesTransformer($xmlPath);
 
-        echo $estPath;
-        
+        $generalCommentContent = 'Kommentar till FOO';
+        $noteCommentContent = 'bostad med tillhörande jordbruk för präst i kapellförsamling.';
+
+
         $params = [
-                "sectionId" => "en5696",
+           //     "sectionId" => "en5696",
                 "bookId" => "4",
-                "fileDiv" => "1",
+                "fileDiv" => "0",
                 "commentTitle" => "FOO",
                 "estDocument" => "file://" . $estPath];
+        
+        $generalComment = $object->getHTML($params, true);
+        $noteComments = $object->getHTML($params, false);
 
-        $html = $object->getHTML($params);
+        $this->assertContains($generalCommentContent, $generalComment);
+        $this->assertNotContains($noteCommentContent, $generalComment);
 
-        $this->assertContains('<span class=', $html);
-        $this->assertContains('Kommentar till FOO', $html);
+        $this->assertContains($noteCommentContent, $noteComments);
+        $this->assertNotContains($generalCommentContent, $noteComments);
+        
     }
 
 }

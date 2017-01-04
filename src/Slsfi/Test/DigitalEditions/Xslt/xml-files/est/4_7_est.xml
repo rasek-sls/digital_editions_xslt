@@ -1,0 +1,410 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.sls.fi/tei">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>
+        </title>
+        <respStmt>
+          <resp>
+          </resp>
+          <name>
+          </name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>Zacharias Topelius Skrifter</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>
+        </p>
+      </sourceDesc>
+    </fileDesc>
+  <encodingDesc><classDecl><taxonomy xml:id="cat_genre"><category xml:id="cg_poem"><catDesc>Poem</catDesc></category><category xml:id="cg_letter"><catDesc>Letter</catDesc></category><category xml:id="cg_childrensliterature"><catDesc>Children's literature</catDesc></category><category xml:id="cg_diary"><catDesc>Diary</catDesc></category><category xml:id="cg_nonfiction"><catDesc>Non-fiction</catDesc></category><category xml:id="cg_prose"><catDesc>Prose</catDesc></category><category xml:id="cg_drama"><catDesc>Drama</catDesc></category></taxonomy><taxonomy xml:id="cat_editorial"><category xml:id="ce_readingtext"><catDesc>Reading text</catDesc></category><category xml:id="ce_introduction"><catDesc>Introduction</catDesc></category><category xml:id="ce_titlepage"><catDesc>Title Page</catDesc></category><category xml:id="ce_annotations"><catDesc>Annotations</catDesc></category><category xml:id="ce_basetext"><catDesc>Base text</catDesc></category><category xml:id="ce_version"><catDesc>Version</catDesc></category><category xml:id="ce_manuscript"><catDesc>Manuscript</catDesc></category></taxonomy></classDecl></encodingDesc><profileDesc><creation><origDate>1846-01-17</origDate><idNo>4_7</idNo><idNo type="bookid">4</idNo><title type="main">Vargen</title></creation><textClass><catRef target="cg_prose" /><catRef target="ce_readingtext" /></textClass></profileDesc></teiHeader>
+  <text>
+    <body xml:space="preserve">
+    <div type="prose">
+    <milestone unit="part" when="1846-01-17" /><pb type="orig" n="6" />
+    <pb type="ZTS" n="107" />
+    <head type="title" xml:id="h1">Vargen.</head>
+
+    <head type="sub" xml:id="h2"><choice><orig>(En</orig><reg resp="AT">En</reg></choice> berättelse från <choice><orig>Tawastland.)</orig><reg resp="AT"><placeName corresp="pl814">Tavastland</placeName>.</reg></choice></head>
+
+    <p n="1" xml:id="p1"><anchor id="pos1" />Långt inne i <placeName corresp="pl814">Tavastland</placeName>, vid foten af en svartgrön kulle, vid stranden af en uddrik sjö, låg för många år sedan en prestgård, ett litet <anchor xml:id="start6288" />kapellansboställe<anchor xml:id="end6288" />, rödmåladt med hvita fönsterluckor och tjärade knutar, fordom sannolikt ett det trefligaste hem för en anspråkslös prestfamilj, men på den tid, hvarom vi tala, nog förfallet och tillräckligt ruckligt, för att ingifva ej synnerligen höga tankar om <anchor xml:id="start6289" />församlingens rikedom eller frikostighet<anchor xml:id="end6289" />. Nyare tider ha sett det gamla huset lemna plats åt en ståtlig byggnad af gulhvit omålad furu, med <anchor xml:id="start6290" />fönster af tre rutors höjd<anchor xml:id="end6290" />, ty gudnås, sjelfva presterskapet är numera angripet af tidens beqvämlighetslust och visar en alltmera <anchor xml:id="start6291" />deciderad<anchor xml:id="end6291" /> böjelse att bo och lefva som gentlemän, hvilket kan hafva sina goda skäl. Men ännu står hon qvar den gamla fyrahundraåriga stenkyrkan Santa Maria, gent emot prestgården, på andra sidan sjön, med sina ofantliga granitblock i murarne, sina trånga <anchor xml:id="start6292" />fönsterlufter<anchor xml:id="end6292" />, sitt branta spetsiga tak och sitt rostfrätta jernkors på spetsen af östra gafveln. Och ännu står han qvar, den låga rödmålade klockstapeln <anchor xml:id="start6293" />af träd<anchor xml:id="end6293" />, byggd år 1647, som en inskrift ofvanföre dörren tydligen tillkännagifver, då deremot årtalet 1428 prunkar i härliga ziffror ofvanför ingången till den heliga Maria. Allt i detta ensliga tempel vittnar om ålderdom och forntid, korset vid altaret, de adliga vapensköldarne kring väggarne, <persName corresp="my216">Sanct Görans</persName> bild i choret och dessa förgylda trädbeläten af <persName corresp="my86">Jungfru Maria</persName> och Apostlarne, dem icke oskickliga händer slöjdat och hvilka – fordom föremål för fromhetens tillbedjan – nu stå förgätna, dammiga och <anchor xml:id="start6294" />öfversedda<anchor xml:id="end6294" /> i en aflägsen vrå. I kyrkan finnes ingen orgel, <anchor xml:id="start6295" />redobogen<anchor xml:id="end6295" /> att sjunga Herrans lof i andakt, men sjelfva den luft man <choice><orig>andas,</orig><reg resp="AT">andas</reg></choice> tyckes tillhöra en förgången tid, den är så unken och instängd, som ville den ej alls ha något att skaffa med nyare tiders <anchor xml:id="start6296" />lättfärdiga<anchor xml:id="end6296" /> vindfläktar, och kanske uppstiger der stundom från grafvarne under kyrkgolfvet någon lukt – icke af förgängelsen, ty den har der längesedan tagit sitt – utan<pb type="ZTS" n="108" /> af <choice><orig>källare</orig><reg resp="AT">källare,</reg></choice> och de lefvande, som hvarje Söndag sjunga och bedja på taket af sina förfäders grifter, känna den utan förfäran. Och rundt kring kyrkan ligga de dödas hvilokamrar hvarftals på hvarandra, der hafva tio eller tolf slägten efter hvarandra bäddats i jorden, och halfmurknade kors och stenar med svårläsliga inskrifter stå der öfvervuxna med tjockt gräs, med vilda törnrosor, <anchor xml:id="start6297" />lejontänder<anchor xml:id="end6297" /> och förgätmigej.</p>
+
+    <p xml:id="p2"><anchor id="pos2" />I denna gamla kyrka såg man för mer än trettio år sedan om söndagarna en prest, väl icke fullt så gammal som kyrkan, men åtminstone ett godt stycke öfver sjuttiotalet. När man hörde hans darrande röst i messan och såg hans långa magra gestalt i den vida fotsida messkjortan innanför altarkransen, trodde man sig se en gengångare från fordna tider, uppstigen för att predika bot och bättring för dessa syndens och förderfvets tider. Föga yngre var hans klockare, som med lika darrande stämma svarade amen på den gamle kapellanens böner, och sjelfva <anchor xml:id="start6298" />spögubben<anchor xml:id="end6298" />, som <anchor xml:id="start6299" />uppläste<anchor xml:id="end6299" /> kyrkdörrarne, kringbar håfven och tände ljusen om julmorgonen, hade väl sett sina fem och sjuttio vintrar snöga öfver jorden.</p>
+
+    <p xml:id="p3">Och i den gamla prestgården på stranden af den vackra sjön, i de förfallna, nedrökta och låga rummen, sysslade prestens sextioåttaåriga maka, omgifven af en sjuttioårig piga och en likaså gammal trotjenare till dräng. Såtillvida var i prestgården allting gammalt, likasom i kyrkan, tillochmed <anchor xml:id="start6300" />soffan i salen och stolarna med det nötta svarta skinnöfverdraget och de åldriga ekskåpen och vägguret, förfärdigadt i <placeName corresp="pl2157">Stockholm</placeName> år 1759, och frälsarens bild i svart ram, målad i olja för mycket längesedan<anchor xml:id="end6300" />. Särdeles höstetid när qvällarne voro långa och dagarna mulna såg det ganska kusligt och åldrigt ut i den gamla gården, utom när den friska tallveden sprakade i den stora spiseln i salen, som spridde ett ljust flammande sken öfver alla föremål och med sin gammaldags treflighet var mycket förnuftigare än de små osynliga kakelugnar, i hvilka man nu instoppar veden för att obemärkt brinna och värma, utan att glädja <anchor xml:id="start6301" />hemfolket<anchor xml:id="end6301" /> med den fladdrande lågans luftiga lek.</p>
+
+    <p xml:id="p4">Men liksom ödet och naturens ordning öfverallt i verlden ställa kontrasterna af höst och vår, af förvissning och ungdomsblomma tätt invid hvarandra, så hände sig äfven här, att prestgårdens åldriga ödslighet lifvades och förljufvades af tvenne unga varelsers närvaro. Adjunkten var den ena – vi vilja kalla honom Lars, ty hvar<pb type="orig" n="7" />före skulle hans namn vara modernare än hans person – en stark och glad ung man om fem och tjugu år, nitisk i sin tjenst, frimodig och öppen i hela sitt <anchor xml:id="start6302" />väsende<anchor xml:id="end6302" />. Den andra var <anchor id="pos5" />kapellanens sextonåriga dotterdotter, den älskeliga rödblommiga Mag<pb type="ZTS" n="109" />dalena, äfven kallad Lena för korthetens skull, en äkta treflig landtflicka, som i baka och brygga och koka och väfva och spinna och sy sökte sin make väl bland tio soknars händiga prestmamseller, men som derjemte hade, utom sin kristendomskunskap, lärt räkna förträffligt i hufvudet, läst <anchor xml:id="start6305" /><title corresp="tw390"><persName role="fictional" corresp="pe3406">Fants</persName> historie</title><anchor xml:id="end6305" /> och <anchor xml:id="start6304" /><title><persName role="fictional" corresp="pe2583">Djurbergs</persName> geografi</title><anchor xml:id="end6304" /> och dessutom kunde säga de latinska namnen på väl hundrade blommor och gräs af dem som vexte kring prestgården. De ungas närvaro i huset var som ett gladt solsken öfver en ödslig skog; der det skiner, der visar den mörka ljungen sina blekröda blommor, den dunkla grönskan antar en gladare färg och ensliga fåglar sjunga på de mossiga grenarna af gran och tall.</p>
+
+    <p xml:id="p5">Utom dessa sex, de fyra gamla och de två unga, fanns ännu i gården en sjunde person, en medelålders man om några och fyratio år, <anchor xml:id="start6306" />kort, undersätsig och koppärrig med bredt och obehagligt ansigte, svart, tofvigt hår och skelande ögon: <anchor xml:id="start6307" />afskedade fältväbeln<anchor xml:id="end6307" /> Maths Kallinen, hvars tjocka oformliga näsa förskaffat honom öknamnet <foreign xml:lang="fin">Susinokka</foreign>, Vargnos, eller helt enkelt <foreign xml:lang="fin">Susi</foreign>, vargen. Och när man rätt betraktade karlen, måste man tillstå, att namnet ej var oförtjent. Hela karlens utseende hade något lömskt, grymt, glupskt, varglikt<anchor xml:id="end6306" />, som gjorde att hvarochen gerna såg sig tillbaka när <foreign xml:lang="fin">Susinokka</foreign> gick bakom, likasom fruktade man hvarje ögonblick ett vilddjurs språng i nacken på den oberedde. Huru den gamle kapellanen visade denne Kallinen ett sådant förtroende, att han <anchor xml:id="start6308" />inrymt<anchor xml:id="end6308" /> honom en kammare på sin gård, det var för hvar man en gåta, ty nästan af instinkt gick man ur vägen för denne man och sjelfva bandhunden <anchor xml:id="start6309" />Phylax<anchor xml:id="end6309" /> hade alltsedan mannens ankomst till gården öppet förklarat sig för hans oförsonlige fiende.</p>
+
+    <milestone unit="part" when="1846-01-21" /><pb type="orig" n="2" />
+    <p xml:id="p6"><anchor xml:id="start6310" />Nu hände sig<anchor xml:id="end6310" /> en kulen afton i November månad år 1810, att Adjunkten, Magister Lars, långt för detta tändt sitt enda ljus och satt sig vid det omålade ekbordet i vindskammaren fördjupad i läsningen af den gamle Romaren <anchor xml:id="start6312" /><persName role="fictional" corresp="pe823">Tacitus</persName><anchor xml:id="end6312" />, hans <anchor xml:id="start6313" />favoritlektur<anchor xml:id="end6313" /> på lediga stunder, då Salomon, den åldrige trotjenaren, inträdde, krökt under en börda ved, hvilken han med buller och brak afkastade vid kakelugnen. Snart sprakade brasan på sitt eget småtrefliga puttrande vis, som den alltid gör när den nyss tändes och luftdraget spelar friskt och fladdrande genom <choice><orig>kakelungsröret.</orig><reg resp="AT">kakelugnsröret.</reg></choice> <anchor id="pos162" />Adjunkten plägade deråt hafva sin innerliga förnöjelse och bortlade då vanligen boken, för att med<pb type="orig" n="3" /> Gud vet hvilka sällsama och svärmande tankar betrakta de späda lågornas muntra slingringar uppför stammarne af vedträden. Så tillät Lars äfven nu sin käre <title><persName role="fictional" corresp="pe823">Tacitus</persName></title> att gå till hvila i sällskap med <anchor xml:id="start6315" /><title corresp="tw391"><persName role="fictional" corresp="pe3282">Nohrborgs</persName> postilla</title><anchor xml:id="end6315" /> på skrifbordet och flyttade sin stol framför den nytända brasan.</p><pb type="ZTS" n="110" />
+
+    <p xml:id="p7">Knappt hade Adjunkten här intagit en temligen bequäm ställning och dragit ett par <anchor xml:id="start6316" />rökar<anchor xml:id="end6316" /> ur den stora <anchor xml:id="start6318" />masurpipan<anchor xml:id="end6318" />, stoppad med <anchor xml:id="start6317" />fem blåa bröder<anchor xml:id="end6317" />, då Salomon trädde med <anchor xml:id="start6319" />husvan<anchor xml:id="end6319" /> förtrolighet närmare och blinkade på sitt vanliga sluga vis med ögonen.</p>
+
+    <p xml:id="p8">»Det är som jag sagt, herre, dörren till fårhuset står vidöppen, ulfven sätter tassen på tröskeln och herden anser honom i sin blindhet för en trogen vallhund.»</p>
+
+    <p xml:id="p9">»Så så, den gamle räfven har då kommit på spåren?»</p>
+
+    <p xml:id="p10">»Den gamle räfven vet hvad han vet.»</p>
+
+    <p xml:id="p11">»Nå låt höra, hvad vet han då?»</p>
+
+    <p xml:id="p12">»Två otroliga ting har han <anchor xml:id="start6320" />skenbarligen<anchor xml:id="end6320" /> sett: det ena att vargen hvar natt arbetar med mörksens gerningar i nybodskammaren, och det andra att Brita är honom dervid behjelpelig.»</p>
+
+    <p xml:id="p13">»Brita? vår gamla piga? omöjligt!»</p>
+
+    <p xml:id="p14">»Möjligt och säkert, herre! Ålderdom och visdom följas icke alltid åt, och jag kunde derpå gifva er ett ännu märkvärdigare exempel.»</p>
+
+    <p xml:id="p15">»Tig dermed, Salomon! Jag vet att du nog <anchor xml:id="start6321" />förmätet<anchor xml:id="end6321" /> misstänker vår gamle vördige pastor sjelf för någon gemenskap med den person, som vi båda föresatt oss att rycka masken utaf, men den gamle räfven är ledd på villspår dervidlag. Pastorn är för godtrogen, det är allt.»</p>
+
+    <p xml:id="p16">»Jo jo, alltför <choice><orig>gadtrogen;</orig><reg resp="AT">godtrogen;</reg></choice> jag säger ej mera.»</p>
+
+    <p xml:id="p17">»Håll mun med dina anspelningar.»</p>
+
+    <p xml:id="p18">»Jag tiger som muren, käre herre.»</p>
+
+    <p xml:id="p19">»Jag tillstår att åtskilligt här i huset förefaller mig besynnerligt. När jag för fyra år sedan <anchor xml:id="start6322" />konditionerade<anchor xml:id="end6322" /> här och lilla Lena och Johannes läste för mig, huru annorlunda var ej vår gamle pastor då! munter och språksam, rask och kry, öppen, förtrolig, driftig ... och nu deremot så sluten, dyster, fåordig, ja jag kan väl yppa det för dig, så <anchor xml:id="start6323" />slö<anchor xml:id="end6323" /> och tankspridd är han nu, att hans embetsgöromål, från det minsta till det största, hvila på mig. Pastorskan är sig lik och lilla Lena är mångfaldt älskvärdare som vuxen flicka, men ... någonting är oklart här i huset, jag märkte det genast, jag måste hafva reda derpå och jag känner att jag derföre måste <anchor xml:id="start6324" />fordra<anchor xml:id="end6324" /> vargen till svars.»</p>
+
+    <p xml:id="p20">»Det är också min mening. Jag har alltid sagt: hvarföre kom Mikko, vår unga raska dräng, ur huset tre veckor efter det vargen hitflyttade? Hvarför kom <anchor xml:id="start6325" />pantfogden<anchor xml:id="end6325" /> vid samma tid med utmätningen? Och <anchor xml:id="start6326" />ändtligen<anchor xml:id="end6326" />, <anchor id="pos4" />hvarför drunknade lille Johannes så plötsligen på första höstisen?»</p>
+
+    <p xml:id="p21">»Akta dig, Salomon, för så obevista misstankar!»</p><pb type="ZTS" n="111" />
+
+    <p xml:id="p22">»Nå nå, jag frågar bara.»</p>
+
+    <p xml:id="p23"><choice><orig>Och</orig><reg resp="AT">»Och</reg></choice> hvad har räfven nu sednast uppspårat? När jag rätt betänker saken, kunna vi ha misstagit oss båda. Man bör ej hysa fördomar mot någon menniska. Man bör ej genast förmoda ulfvens hjerta der man ännu ej sett annat än ulfvens <anchor xml:id="start6327" />liknelse<anchor xml:id="end6327" /> i ett och annat anletsdrag.»</p>
+
+    <p xml:id="p24"><anchor xml:id="start6328" />»Aj aj<anchor xml:id="end6328" /> unge herre, gamle Salomon har sett mycket i verlden. Ännu aldrig har han sett en skurk med ett rent ärligt ansigte i obevakade stunder, ej heller har han någonsin sett en ärlig man med en komplett skurkfysionomi. Det der är icke så bara fördom, som ungt godtroget folk föreställer sig. Vår Herre stämplar de sina, och om han stundom finner för godt att göra goda menniskor vanskapliga att påse, så nedlägger han i sjelfva det fula något som försonar och blidkar öga och omdöme. Men har djefvulen farit i en menniska, så var viss uppå att helvetes eld sprakar i den menniskans ögon redan länge på förhand, som gnistorna i smedjan.»</p>
+
+    <p xml:id="p25">»Nå hvad vet då räfven?»</p>
+
+    <p xml:id="p26">»Räfven vet hvad han vet. Tror herr Lars på spöken? Jag säger herr, som jag förr var van, fast jag väl nu borde säga magister.»</p>
+
+    <p xml:id="p27">»Hvad hör det hit om jag tror på spöken?»</p>
+
+    <p xml:id="p28">»Jag frågar så bara <anchor xml:id="start6333" />förroskull<anchor xml:id="end6333" />.»</p>
+
+    <p xml:id="p29">»Visserligen gifves det <anchor xml:id="start6334" />mellan himmel och jord<anchor xml:id="end6334" /> mycket <anchor xml:id="start6335" />underbart<anchor xml:id="end6335" />, som man ej får <anchor xml:id="start6336" />neka<anchor xml:id="end6336" /> för det man ej förstår det. Skrock och vidskepelse vill jag deremot ingalunda försvara.»</p>
+
+    <p xml:id="p30">»Då skall jag berätta herr Lars någonting. Förliden natt vidpass klockan 1 vaknade jag ur min söta sömn deraf att någon sade i mitt öra: stig upp och gå i bagarstugan! Jag sätter mig upp i sängen i den tron att det är morgon och att gamla Brita behöfver något handtag. I kammaren är det <anchor xml:id="start6337" />stickmörkt<anchor xml:id="end6337" />. Hvem är här? ropar <choice><orig>jag,</orig><reg resp="AT">jag.</reg></choice> Ingen svarar. Jag lägger mig åter och tror att jag drömt. Knappt håller jag åter på att insomna, då samma ord tydeligen höras helt nära mig: stig upp och gå i bagarstugan! Nu stiger jag upp och tänder en <anchor xml:id="start6338" />perta<anchor xml:id="end6338" />, i tanke att någon gömt sig i rummet, men ingen annan är der att se än vår svarta katt, på hvilken ögonen glimmade som eldkol i hufvudet och håren reste sig längs ryggen. Något underlig till mods lägger jag mig för andra gången, men knappt har det åter blifvit mörkt, innan samma ord för tredje gången hördes, och nu var jag klarvaken. Strax stiger jag upp och går i bagarstugan, finner der stugan full af rök och eld i spånorna så nära intill den stora högen af linknippen och blår, att kanske fem minuter sednare huset och gården skulle stått i ljusan låga, ty det blåste en stark nordvest.»</p>
+
+    <p xml:id="p31">»Och det har du ej omtalat <anchor xml:id="start6339" />förr<anchor xml:id="end6339" /> i <choice><orig>dag!</orig><reg resp="AT">dag!»</reg></choice></p><pb type="ZTS" n="112" />
+
+    <p xml:id="p32">»Jag hade mina skäl att ej synas ha varit ute i natt. Nå godt och väl, jag släcker elden mycket noga och går derpå sakteligen tillbaka, när jag får se ljus i vargens rum på bakgården. Strax far nyfikenhetslustan i min gamla kropp, jag går närmare, men kan ingenting se, ty ett lakan är hängdt för fönstret. Likväl, då jag hör talas derinne, lutar jag mitt öra mot rutan och får då ganska tydligt höra vargens röst säga åt någon annan i rummet: tvåhundra riksdaler och icke en skilling derunder, det är väl ej förmycket när man vill vinna många tusen.»</p>
+
+    <p xml:id="p33">»Besynnerligt. Till hvem ställdes då denna fordran?»</p>
+
+    <milestone unit="part" when="1846-01-24" /><pb type="orig" n="2" />
+    <p xml:id="p34"><anchor xml:id="start6340" />»Af hvem vargen begärde<anchor xml:id="end6340" /> tvåhundra riksdaler? Ja, se det är den ena knuten; den andra är: till hvad?»</p>
+
+    <p xml:id="p35">»Till välfånget byte, förstås. Den skurken!»</p>
+
+    <p xml:id="p36">»Man bör ju icke döma en menniska efter dess ansigte, säger herr Lars; vargen samtalade kanhända med en af dessa <anchor xml:id="start6341" /><foreign xml:lang="fin">laukku</foreign>-ryssar<anchor xml:id="end6341" />, som vandra kring landet och som nu begärde låna penningar af honom till handel. Två sådana voro ju här i går.»</p>
+
+    <p xml:id="p37">»Det vore ingen omöjlighet.»</p>
+
+    <p xml:id="p38">»Men ärligt folk brukar ej låna pengar inom lyckta dörrar klockan 1 om natten när en eldsvåda är i antågande.»</p>
+
+    <p xml:id="p39">»Hvad är det för kuriösa sammanställningar du gör, min kära Salomon? Skulle väl elden i bagarstugan ej varit så alldeles tillfällig?»</p>
+
+    <p xml:id="p40">»Hm, jo jo, alldeles tillfällig, hvem rår för olyckan? Jag har ej sagt att någon tändt på <anchor xml:id="start6342" />en spån<anchor xml:id="end6342" />, för att sedan hota med spådomar om brandfara.»</p>
+
+    <p xml:id="p41">»Gamle krångelmakare!»</p>
+
+    <p xml:id="p42">»Märk nu väl, herr Lars, så skall han döma om räfven råkat på villspår. Den nätta fordran på tvåhundra riksdaler föreföll mig så märkvärdig, att jag ej hade hjerta att taga örat från rutan. Den gunstig herrn, som skulle betala, lär ha gjort invändningar, ty om en stund hördes åter vargens hvassa skärande röst säga: intet uppskof dermed, så framt ni vill undvika en stor olycka. Min ande säger mig, att derest ni icke betalar, skall inom fem minuter ... och nu sänkte han rösten, så att endast vindens brus hördes fara i natten genom tallskogen.»</p>
+
+    <p xml:id="p43">»Och hotelsen syftade på elden, tror <choice><orig>du?’</orig><reg resp="AT">du?»</reg></choice></p>
+
+    <p xml:id="p44">»Jag tror allsingenting, märk det, herr Lars, allsingenting! Jag tror bara, att de två personer, jag strax derpå såg komma ut från nybodskammaren och gå åt bagarstugan till, voro vargen och <reg>...»</reg></p>
+
+    <p xml:id="p45">»Vargen och ...?»</p>
+
+    <p xml:id="p46"><reg>»...</reg> ingen <anchor xml:id="start6343" />kontrysse<anchor xml:id="end6343" />, det är så godt som afgjordt.»</p><pb type="ZTS" n="113" />
+
+    <p xml:id="p47">»Rättfram utan <anchor xml:id="start6344" />krångel<anchor xml:id="end6344" />, hvem var den andre?»</p>
+
+    <p xml:id="p48">»Natten var mörk och månlös, herr Lars, och gamle Salomon är kanske en smula räf, men icke det bittersta uggla. Jag kände platt icke den andre, der jag stod gömd bakom knuten af ladugården. Kort derefter förfogade jag mig tillbaka i drängkammaren, ty jag frös. Men hvem tror herr Lars jag såg stå med en lykta i den halföppna farstugudörren så sent på natten? Jo Brita, pigan, jag såg skenbarligen hennes skrynkliga markattansigte i skenet af lyktan. Jag lemnar derhän, om man just derföre bör misstänka hennes sjuttioåriga dygd.»</p>
+
+    <p xml:id="p49">»Hvem kan väl hon ha väntat uppå?»</p>
+
+    <p xml:id="p50">»Ja hvem? Här ha vi nu en hel hop frågor utom dem jag fördristade mig göra <anchor xml:id="start6345" />i jons<anchor xml:id="end6345" />. Hvem sade i mitt öra: stig upp och gå i bagarstugan? Hvem smulade elden i spånorna? Hvem var hos vargen om natten? Med hvilken rätt och till hvilket ändamål fordrade han tvåhundra riksdaler? Hvad betydde hotelsen? Hvarföre gingo de två till bagarstugan? Och på hvem väntade Brita med lyktan i farstun?»</p>
+
+    <p xml:id="p51">»Härunder ligger en hund begrafven, Salomon!»</p>
+
+    <p xml:id="p52">»Menar herr Lars? Intet tror jag det.»</p>
+
+    <p xml:id="p53">»Du är mera slipad än man skulle tro dig om.»</p>
+
+    <p xml:id="p54">»Hvad kan väl en stackars enfaldig gubbe veta?»</p>
+
+    <p xml:id="p55">»Låtom oss ej <anchor xml:id="start6346" />krångla<anchor xml:id="end6346" />. Vi känna nu så mycket att vi ha all anledning att misstänka ett farligt skurkstreck. Att göra det om intet, är vår skyldighet. I natt sedan alla lagt sig infinner du dig hos mig och medtager den lilla blindlyktan, som jag sett hänga nere i köket. Vi skola ut på ströftåg och bofven skall ej undkomma oss.»</p>
+
+    <p xml:id="p56">»Jo jo, vi få väl se, herr Lars!»</p>
+
+    <p xml:id="p57">Som sagdt, det var en kulen afton, icke en sådan blek, trånande <anchor xml:id="start6347" />novemberquäll, som <persName role="fictional" corresp="pe633">Böttiger</persName> besjunger och som <persName role="fictional" corresp="pe2692">Ehrström</persName> satt den likaså bleka och vackra musiken till<anchor xml:id="end6347" />, utan en grundligt ruskig och ful höstafton, regnig, stormig, stjernlös och grafmörk. När adjunkten herr Lars – han kallades ännu så från sin informatorstid – släckte ljuset i sin vindskammare och begaf sig tvers öfver den <anchor xml:id="start6348" />spökiga<anchor xml:id="end6348" /> vinden, der luftdraget pep genom springorna, utför den branta trappan med den nötta ledstången ned i den blåsiga farstun, – då syntes det honom rätt kusligt och otrefligt i den ensliga prestgården. Åter när han kom in i den<pb type="orig" n="3" /> varma salen, der pastorn och pastorskan i hvar sin gungstol med svart läderöfverdrag sutto framför en rest af brasan och den rödlätta Lena i sin smårutiga hemväfda bomullsklädning sysslade med att duka den enkla quällsvarden, då for genom hans lynne en skymt af den trefnad man vanligen känner i ett varmt rum bland goda menniskor<pb type="ZTS" n="114" /> när kroppen har helsa och själen frid. Uppriktigt taladt, tyckte herr Lars, att också här kunde sällheten trifvas, om blott ... ja om blott Lena vore hans lilla hustru redan nu.</p>
+
+    <p xml:id="p58">Herr Lars betraktade pastorn: han sof.</p>
+
+    <p xml:id="p59">Den gamla pastorskan satt tyst och begrundande.</p>
+
+    <p xml:id="p60">Lilla Lena var solsken nu som alltid.</p>
+
+    <p xml:id="p61">Gumman i gungstolen vinkade herr Lars närmare.</p>
+
+    <p xml:id="p62">»Käre magister,» hviskade hon, »förlåt att jag <anchor xml:id="start6349" />faller<anchor xml:id="end6349" /> besvärlig, men kunde magistern låna mig två riksdaler i morgon bitti? Min man är för tillfället alldeles utan och i morgon går bud till staden.»</p>
+
+    <p xml:id="p63">Penningebrist var något ganska ovanligt i pastorns hus, som väl ingalunda var rikt, – hvilken landskapellan samlar väl penningar i vårt land? – men likväl alltid varit ansedt för välbehållet. Hvart togo de då vägen, de <anchor xml:id="start6350" />för smör och spanmål i förgår inkasserade tvåhundra riksdalerna<anchor xml:id="end6350" />? tänkte herr Lars för sig sjelf, i det han med en viss saknad räckte gumman sin enda och sista <anchor xml:id="start6351" />tvåabanko<anchor xml:id="end6351" />. Tvåhundra riksdaler? vargens fordran af den okända förleden natt? Det började se alltmera misstänkeligt ut. Borde man varna pastorn? en yngling varna en gråhårig gubbe? nej! men i tysthet vaka öfver hans svaghet och i nattens mörker och ondskans försåt blifva hans goda, hans räddande engel – ja!</p>
+
+    <p xml:id="p64">Herr Lars såg på pastorn – han sof i gungstolen – dygdens sömn eller – svaghetens.</p>
+
+    <p xml:id="p65">När ungdomen felar, kan man ofta deröfver harmas djupt; men man tänker då vanligen: hetsiga blod! oerfarna godtrogenhet! lynne utan stadga!</p>
+
+    <p xml:id="p66">Åter när ålderdomen, grånad under så många pröfningar, förgår sig i vådliga fel, känner man ett medlidande, som ofta är <anchor xml:id="start6352" />vidrigt<anchor xml:id="end6352" />. Man ville så gerna bära aktning och vördnad för de gråa håren; men svagheten, som man älskar hos qvinnan och stundom förlåter hos ynglingen, kan man hos den gamle mannen endast beklaga.</p>
+
+    <p xml:id="p67">Herr Lars intog sin lilla quällsvard med de andra. Blott pastorn saknades: man ville ej väcka honom.</p>
+
+    <p xml:id="p68"><anchor id="pos6" /><anchor xml:id="start6353" />»Vaka öfver min far!»<anchor xml:id="end6353" /> hviskade Lena med ovanlig vekhet i rösten.</p>
+
+    <p xml:id="p69">»För din skull o så gerna!» blef svaret.</p>
+
+    <p xml:id="p70">Herr Lars gick åter upp till sin ensliga kammare. <anchor xml:id="start6354" />Och stormen tjöt och störtregnet smattrade och nattens gastar redo på svarta skyar öfver rymderna. Men i himlen vakade Guds öga<anchor xml:id="end6354" /> och på jorden den redliges samvete. För dem viker ondskan och oskulden sofver trygg.</p>
+
+    <milestone unit="part" when="1846-01-28" /><pb type="orig" n="5" /><pb type="ZTS" n="115" />
+    <p xml:id="p71"><anchor xml:id="start6355" />Det är icke feghet<anchor xml:id="end6355" /> <choice><orig>ati</orig><reg resp="AT">att</reg></choice> känna sitt hjerta slå med hastigare slag, när man nalkas ett afgörande ögonblick. Den tappraste krigare erinrar sig stunder, då blodet vikit från hans kinder; men den modige mannens kraft förlamas icke derföre; hans arm lyder hans vilja; faran har för honom ett hemlighetsfullt behag. Hvarföre står man med så rysande glädje under en åsksvart himmel, när dundret rullar rätt öfver ens hufvud, när knallen följer tätt efter ljungelden och man tydligt känner, att den lilla droppen af ett jordelif i en enda blink kan vara förspilld i evighetens gränslösa ocean? Icke af trotsigt öfvermod glädes man att stå der, hvarest vanmakten af all mensklig kraft är uppenbar; men deruti ligger det berusande i faran, att i samma ögonblick man är redobogen att kasta bort sig sjelf, står man upphöjd öfver sig sjelf, och bräckligheten af lifvet upphör att oroa föreställningen i samma stund man med gladt mod prisgifver åt förgängelsen hvad henne tillkommer.</p>
+
+    <p xml:id="p72">Herr Lars kunde ej dölja för sig sjelf, att han ju utsatte sig för ett vådligt äfventyr i striden mot en bof, om hvars jättestyrka och förtviflade mod han ingalunda var okunnig. Af billig försigtighet laddade han sina små förträffliga <anchor xml:id="start6356" />respuffertar<anchor xml:id="end6356" />, den ena med kork, och den andra med kula, pröfvade <anchor xml:id="start6357" />flintorna<anchor xml:id="end6357" /> mot nageln samt instoppade kamraterna en i hvardera fickan af sin mörkgröna <anchor xml:id="start6358" />frisöfverrock<anchor xml:id="end6358" />. Så rustad, bidade <choice><orig>Herr</orig><reg resp="AT">herr</reg></choice> Lars Salomons ankomst.</p>
+
+    <p xml:id="p73">Redan längesedan hade det stora väggurets slag dernere i salen, förnimbara ända upp i adjunktens kammare, förkunnat hvilotimman, kl. 9, då hela den lilla prestgården höstetid vanligen slumrade godt. Vårdslöst utsträckt på sin bädd, tände <choice><orig>Herr</orig><reg resp="AT">herr</reg></choice> Lars sin tredje pipa och bidade Salomon, som allt ännu lät vänta på sig.</p>
+
+    <p xml:id="p74">Nu hördes ett buller på vinden och herr Lars for upp. Men nej! det var vinden, som slog mot väggen en lossnad lucka. Derpå blef det åter tyst och man hörde fickurets sakta knäppning på skrifbordet.</p>
+
+    <p xml:id="p75">Klockan slog tio. Ett prasslande hördes i rummet. Det var råttor, som banade sig ginvägar genom golfvet.</p>
+
+    <p xml:id="p76">Ett vidrigt uthållande klagoljud tillkännagaf att den hvirflande stormen funnit inträde genom några obekanta hål i väggarna af det åldriga huset.</p>
+
+    <p xml:id="p77">Klockan tre quart till 11 hördes ändtligen Salomons varsama steg uppför vindstrappan. Herr Lars kunde icke återhålla ett <anchor xml:id="start6359" />smålöje<anchor xml:id="end6359" /> när han såg den gamle inträda i strumpfötterna bärande <anchor xml:id="start6360" />stöflorna<anchor xml:id="end6360" /> i ena handen och blindlyktan i den andra.</p>
+
+    <p xml:id="p78">Adjunktens munterhet upptogs icke väl. »Nå nå,» menade Salomon, »skrattar bäst som skrattar sist. Kanske skulle jag lunsa uppför trappan i mina <anchor xml:id="start6361" />becksömmare<anchor xml:id="end6361" /> och väcka hela huset? Nehej. Jag var i min ungdom<pb type="ZTS" n="116" /> med<pb type="orig" n="6" /> när länsman Halén grep Alatalo-Matti, den erkebofven, som slogs med tolf mans styrka och ensam brände Limango by. Två man fingo den gången bita i gräset för rymmarens yxa; den tredje, som var länsman sjelf, miste högra pekfingret och en bit af tummen, innan han fick fast tag i kragen på rackaren, och allt detta bara för det vi gjorde buller när vi klefvo uppför stegen till höskullen, der Alatalo sof. Jag känner sådant der folk, de ha sina <anchor xml:id="start6362" />utliggare<anchor xml:id="end6362" />, de äro karlar att stå i komplott med spindlarna i taket och råttorna under golfvet. För resten så skall jag säga herr Lars, att både vargen och herden äro ute på drift och slå de sig ihop, så lemnar jag derhän, hvems pels det gäller.»</p>
+
+    <p xml:id="p79">»Då är ingen tid att förlora. Fort!»</p>
+
+    <p xml:id="p80">Tyst och varsamt begåfvo sig nu herr Lars och hans Salomon ut på äfventyr. Lyckligt passerades vind, trappor och farstu. Regnet, blåsten och höstmörkret voro deremot icke de bästa kamrater att möta ute på den slaskiga gården. Det var en ruskig <choice><orig>natt ,</orig><reg resp="AT">natt,</reg></choice> enkom gjord för midnattsbedrifter, och herr Lars drog mössan fastare ned öfver pannan, för att icke förlora den i vindpustarnas öfverdådiga lek.</p>
+
+    <p xml:id="p81">»Mörkt i pastorns <reg>kammare»,</reg> anmärkte adjunkten.</p>
+
+    <p xml:id="p82">»Ljus i Britas <reg>kökskammare»,</reg> tillade tjenaren.</p>
+
+    <p xml:id="p83">»Jag håller vad att vargen har illumination.»</p>
+
+    <p xml:id="p84">»Stickmörkt har vargen.»</p>
+
+    <p xml:id="p85">»Huru skall man det förstå?»</p>
+
+    <p xml:id="p86">»Han tänder hellre spån, än han tänder talgljus.»</p>
+
+    <p xml:id="p87">»Skulle vi kanhända löpa som narrar för att afstyra inbillade bofstreck? Mig tyckes nästan.»</p>
+
+    <p xml:id="p88">»Ruskig natt, kära herre! Gå vi in tillbaka?»</p>
+
+    <p xml:id="p89">»Håll! Vargens dörr öppnas inifrån. Fort åt sidan!»</p>
+
+    <p xml:id="p90">Herr Lars hade rätt. Gömda bakom hörnet af ladugårdsbyggnaden, sågo de båda spejarne tvenne gestalter utkomma från vargens boning och försvinna i skuggorna af <choice><orig>alleen,</orig><reg resp="AT">alléen,</reg></choice> som ledde ut till landsvägen.</p>
+
+    <p xml:id="p91">»Låtom oss följa dem!» hviskade <choice><orig>Herr</orig><reg resp="AT">herr</reg></choice> Lars.</p>
+
+    <p xml:id="p92">Och efter honom klef Salomon med långa steg, uppmanande sin herre »att icke stiga der det blänkte», ty höstregnet hade bildat djupa insjöar vid den annars trefliga gångstigen.</p>
+
+    <p xml:id="p93">»Halt kamrat! vi ha förlorat spåret.»</p>
+
+    <p xml:id="p94">»Nej herre, de veko till venster åt kyrkan till.»</p>
+
+    <p xml:id="p95">»Mig synes de veko till höger åt landsvägen.»</p>
+
+    <p xml:id="p96">»Jag säger att de veko till venster; jag såg det tydligt.»</p><pb type="ZTS" n="117" />
+
+    <p xml:id="p97">»Hut rackare, det var en obstinat en den der!»</p>
+
+    <p xml:id="p98">»Grep han bofven, herr Lars?»</p>
+
+    <p xml:id="p99">»Nej jag föll in till <anchor xml:id="start6363" />medjan<anchor xml:id="end6363" /> i en gytjegrop.»</p>
+
+    <p xml:id="p100">På måfå fortsattes jagten åt venster, efter den gamles förslag. Utgången visade att han haft rätt. De båda spejarne hade kommit kyrkan på några och tjugu steg nära, då de tydligt hörde dörren till choret knarra på sina gångjern. Adjunkten nalkades på tå och fann dörren halföppen. </p>
+
+    <p xml:id="p101">»För Guds skull, herr Lars, gå ej in, ni störtar er i förderfvet. Ni kan ej besvärja <anchor xml:id="start6364" /><foreign xml:lang="fin">kirkonväkit</foreign><anchor xml:id="end6364" />, ni.»</p>
+
+    <p xml:id="p102">»Tig och gif hit blindlyktan. Stå vakt här och släpp ingen ut. De bofvarne vilja stjäla kyrkans silfver.»</p>
+
+    <p xml:id="p103">»Men Pastorn hade ju sjelf nycklarne.»</p>
+
+    <p xml:id="p104">Herr Lars hörde icke denna anmärkning, ty han befann sig redan inne i kyrkan. Det syntes honom ganska hemskt att stå så ensam i mörkret, i bofvars granskap, dem han icke såg, men hvilkas steg han hörde helt nära genljuda under hvalfven. Han hukade sig ned i en bänk och lyssnade.</p>
+
+    <p xml:id="p105">»Bryta vi upp dörren till sakristian?» sade en röst i mörkret.</p>
+
+    <p xml:id="p106">»Nej det får icke ske. Strax kommer den gamle narren med nycklarne. Intet uppseende. <anchor xml:id="start6365" />Honnet<anchor xml:id="end6365" /> affär.»</p>
+
+    <p xml:id="p107">Det var obekanta karlars röst. Herr Lars kände dem ej. Jaså, tänkte han.</p>
+
+    <p xml:id="p108">»Skickligt tillställdt. Först lurar vargen honom på tvåhundra riksdaler, till förberedelser för den stora skattens upptäckande och sedan lockar han honom till besvärjelser i kyrkan, på det att vi i godt mak må inpacka silfret under tiden. Att han trodde vargen, den lärda herrn!»</p>
+
+    <p xml:id="p109">»Han skulle ej ha bitit på kroken om ej en saga förbryllat hans hjerna. Under <anchor xml:id="start6369" />stora ofreden<anchor xml:id="end6369" />, säges det, då nuvarande kapellanens farfar var prest i församlingen och man hvar dag väntade fienden, nedgrofs hela ortens silfver och reda penningar på ett hemligt ställe i kyrkomuren. Emellertid dog väktaren, som nedgräfvit skatten, och presten mördades af fienden, hvaraf hände sig att när lugnet återvände, lefde dåmera ingen som visste hvar skatten var att finna, och förgäfves har man sökt den alltsedan. Kapellborna vore tillochmed ej obenägna att för skattens finnande nedrifva kyrkan, som ändock måste kasseras <anchor xml:id="start6368" />innan kort<anchor xml:id="end6368" />, men föreställ dig, <anchor xml:id="start6367" /><anchor id="pos10" />pastorn vurmar för inrättandet af en sockenskola och vill sjelf disponera skatten, ithy att kyrkorådet ingalunda skulle anslå penningarna dertill, ifall de funnes, utan till den nya kyrkans uppbyggande<anchor xml:id="end6367" />. Den gamle narren är barn på nytt, vargen har så länge <anchor xml:id="start6366" />pudrat<anchor xml:id="end6366" /> honom med skryt öfver sin insigt i skattgräfveri, att han låtit förmå sig till den dumhet som nu förestår.»</p><pb type="ZTS" n="118" />
+
+    <p xml:id="p110">»Det är likväl bra dumt af en prest, det här, att ställa till ett sådant spektakel i kyrkan.»</p>
+
+    <p xml:id="p111">»Än vi då som bestjäla kyrkan, du mes?»</p>
+
+    <p xml:id="p112">»Det är annat slag. Vi äro ju ej prester.»</p>
+
+    <p xml:id="p113">»Tyst! någon kommer. Göm dig fort!»</p>
+
+    <milestone unit="part" when="1846-01-31" /><pb type="orig" n="2" />
+    <p xml:id="p114"><anchor xml:id="start6370" />Det buller<anchor xml:id="end6370" />, som föranlät de båda kyrkotjufvarne att draga sig längre in i skydd af skuggorna under predikstolen, förorsakades af tvenne nya nattliga vandrare, som på denna ovanliga tid hade för afsigt att göra templet till skådeplats för sina dårskaper eller sina brott. Herr Lars, der han satt <choice><orig>nehukad</orig><reg resp="AT">nedhukad</reg></choice> mellan bänkarne, trodde sig af de hviskande rösterna i de nykomna igenkänna herden och vargen, pastorn och fältväbeln, stadda på olofliga värf, och hans hjerta slog hårdare, men fullt af förbittring öfver det ovärdiga gäckeri man vågade drifva med ålderdomssvagheten och med kyrkan. Han lyssnade.</p>
+
+    <p xml:id="p115"><reg>»Nu»,</reg> sade vargen, »är pastorn god och lemnar mig nyckeln till sakristian, att jag derifrån må hämta timglaset, ty jemt en half timma bör besvärjelsen räcka.»</p>
+
+    <p xml:id="p116">Godtroget måtte den gamle ha gifvit nyckeln åt förrädaren, ty kort derefter hörde herr Lars dörren uppläsas och hans fina öra urskiljde temligen tydligt stegen af <hi rend="expanded">flere</hi> personer, som gingo dit in. Efter ett kort dröjsmål återkom en ensam och vargens röst hördes säga: »med pastorns tillåtelse skola vi nu <reg>börja».</reg></p>
+
+    <p xml:id="p117">Den som i detta ögonblick sett herr Lars, hade troligen varseblifvit ett par stora svettperlor på hans panna. De voro nu sex personer i kyrkan, det visste han, och af dessa var visserligen halfva antalet ärligt folk. Men mot sig hade han tre vildsinta bofvar i mannaårens fulla styrka och med sig tvenne orklösa gubbar, förvirrade af mörkret och faran, odugliga att lemna något slags hjelp. En stund <anchor xml:id="start6371" />eftertänkte<anchor xml:id="end6371" /> han, om han genom list kunde locka skälmarna ned i griften till höger i choret, nyss öppnad i anseende till en reparation af kyrkgolfvet, och försedd med en bredvid på kant stående häll af sandsten, hvilken med ringa möda kunde åter nedfällas öfver öppningen. Detta syntes likväl nära nog omöjligt, och läte det än göra sig med en, så återstode ju likväl två medbrottslige, som ej skulle underlåta att befria kamraten. Emellertid erinrade sig herr Lars, att dörren till sakristian hade på yttre sidan en hake, hvarmed man sannolikt igenhållit dörren någon gång när låset reparerats. Man kunde våga ett <choice><orig>försök</orig><reg resp="AT">försök,</reg></choice> tänkte han, de två tjufvarna äro nu derinne sysselsatte med att uppdyrka silfverskåpet, jag vill göra dem en liten <anchor xml:id="start6372" />surpris<anchor xml:id="end6372" />.</p><pb type="ZTS" n="119" />
+
+    <p xml:id="p118">Tyst som en ande smög herr Lars nu genom skuggorna framåt sakristian, <anchor xml:id="start6373" />famlade<anchor xml:id="end6373" /> sakta på dörren, fattade haken och fästade den stadigt i sin märla. Karlarne derinne måtte ha ansett honom för deras medbroder, ty intet försök gjordes inifrån att afböja denna manöver, medan vargen ute i kyrkan trodde det sakta rasslandet af haken härröra från hans vänner derinne.</p><pb type="orig" n="3" />
+
+    <p xml:id="p119">Derpå begaf sig herr Lars tillbaka till choret, passerade på några stegs afstånd från de båda skattsökarne, nedsteg i den nyss beskrifna griften och hade just hunnit nedhuka sig bland lemningarne af de der multnande adeliga kistorna och sköldemärkena, då vargen tände eld i en med sällsamt <anchor xml:id="start6374" />blått skimmer lysande lampa, förmodligen af saltad sprit<anchor xml:id="end6374" />, som med sitt sken ger alla föremål ett dödligt hemskt utseende. Herr Lars såg efter sin lykta; den brann.</p>
+
+    <p xml:id="p120">Och i skenet af lampan såg man nu en spöklik syn. Midt på den lilla planen framför altaret stod <choice><orig>fälwäbeln</orig><reg resp="AT">fältväbeln</reg></choice> med sin vargfysionomi, iklädd en hvit skjorta, och hållande i ena handen den blåbleka lampan, i den andra ett timglas, medan längst borta i kyrkan den gamle pastorns gestalt framskymtade mellan skuggorna och det gråa håret reste sig i tofviga lockar kring de likbleka kinderna och de stirrande ögonen.</p>
+
+    <milestone unit="part" when="1846-02-07" /><pb type="orig" n="2" />
+    <p xml:id="p121"><anchor xml:id="start6375" />Det uppträde, som nu följde<anchor xml:id="end6375" /> i den grafstilla natten och den åldriga kyrkan, hade något på engång hemskt, fasansfullt och för fantasin anslående. Af de sex personer, hvilka spelade denna tempelskändande komedi, voro endast tvenne synlige: bedragaren och den bedragne. Vargens ställning var väl beräknad. Det blåa likfärgade skenet af hans lampa föll så att den gamle pastorns minsta rörelse kunde med lätthet bevakas, medan trakten af sakristian, derifrån de tvenne bofvarne skulle utkomma med kyrksilfret, var höljd i ett tjockt mörker. <anchor xml:id="start6376" />Enligt allt utseende<anchor xml:id="end6376" /> var bofstrecket sålunda uträknadt, att medan besvärjelsen upptog pastorns hela uppmärksamhet, den ena af de medbrottslige skulle undkomma med silfret, medan den andre var vargen behjelplig att ytterligare dåra den gamle. När sedan stölden skulle upptäckas, men både kyrkan och sakristian befinnas ordentligt <anchor xml:id="start6377" />tillästa<anchor xml:id="end6377" />, skulle allt ansvar drabba pastorn, som hade nycklarna och som <anchor xml:id="start6378" />visserligen<anchor xml:id="end6378" /> förmodades för skam skull tiga med hela det nattliga äfventyret.</p>
+
+    <p xml:id="p122"><anchor id="pos11" />Nu började vargen sin besvärjelse med ett otydligt mumlande och allehanda underliga åthäfvor. Stundom höjde han rösten och den närmare till honom gömde herr Lars kunde då urskilja sådana föga till saken hörande ord, som »måndag, tisdag, onsdag, thorsdag» o. s. v., månadernas namn och diverse annat, hvilket gaf tillkänna, att vargen led brist på concepter<pb type="ZTS" n="120" /> till den långa ramsa, hvarmed han uppehöll pastorn under tjufnaden. Stundom afbröt han tvärt, likasom väntade han af sina kamrater ett öfverenskommet tecken att operationen lyckats. Då emellertid intet sådant hördes af, syntes han på måfå skrida till hufvudkuppen, hvilken ofelbart borde förbrylla den bedragne pastorns ålderdomssvaga hjerna.</p>
+
+    <p xml:id="p123">»Ett två tre fyra fem sex!» hördes vargens höjda röst genljuda mot granitmurarna. »Ett två tre fyra fem sex sju! – Väl känner jag, <persName rend="expanded" corresp="my63">Kratti</persName>, ditt hem.<note id="ftn1" n="*)" place="foot"><persName rend="expanded" corresp="my63">Kratti</persName> (Se <anchor xml:id="start6379" /><title corresp="tw392"><persName role="fictional" corresp="pe825">Gan:s</persName> Mythologi</title><anchor xml:id="end6379" />) var en <anchor xml:id="start6381" />rådare<anchor xml:id="end6381" />, som anropades af Tavasterne vid skattgräfning. Troligen hade Fältväbeln lärt denna besvärjelse af någon trollkarl och fann den nu lämplig att användas.</note> I lunden af al, som aldrig löfvas, bland nakna qvistar födde dig din moder till en penningegömmare, till en gulddrake. Der quittrar ingen liten fågel i din boning, der bygger korpen sitt näste, der skrattar skatan, ulfven tjuter och ugglan skränar. Ingen herde drifver der sin hjord, ty brända äro backarna, tung är luften der och dagens ljus är skumt och sällsama väsenden dväljas i nattens mörker der bland stenrösen. Men ur nakna lunden, ur onda nästet manar jag dig, att bringa mig skatten ur jordens innanmäten. Åt mig och ingen annan måste du hämta den guldskimrande, den <choice><orig>silfwerblänkande,</orig><reg resp="AT">silfverblänkande.</reg></choice> Ve dig, om från jordens yta, från grunden af kyrkomuren penningekistan åter sjunker i det bottenlösa svalget. Jag skall förbanna dig djupt in i <anchor xml:id="start6380" />smärtornas berg<anchor xml:id="end6380" />, der sveda och värk skall blifva din dagliga spis och plågornas jungfru skall bränna sitt jern genom ditt bröst. Men gifver du mig skatten, den klara glänsande jordenes vällust, si så skall jag löfva din lund och göra din boning ljufvelig och gifva dig björnens hjerta att äta och hans pels till att hvila uppå under frost och snö när det sprakar af köld i skogarna <reg>....»</reg></p>
+
+    <p xml:id="p124">Nu uppflammade lampan blåare och hemskare än förr och besvärjarens röst blef vild och ryslig:</p>
+
+    <p xml:id="p125">»Och jag manar er, döda som multnen i grafvarna, och jag manar er, andar som bon under jorden, och jag manar er, nattens spöken, som äten maskar och mull, att I sägen mig stället der skatten är, den de nu köttlösa händer fordom nedgrofvo i kyrkan för fiendens skull.»</p>
+
+    <p xml:id="p126">»<hi rend="expanded">Här!</hi>» svarade en dåf röst under kyrkgolfvet.</p>
+
+    <p xml:id="p127">Den gamle pastorn fattade i en bänkdörr för att ej falla. Besvärjaren sjelf syntes studsa för det svar han begärt, men sannolikt ansåg han rösten tillhöra en af hans vänner, ty åter frågade han med temmelig fattning:</p>
+
+    <p xml:id="p128">»Hvar bygger guldfågeln sitt bo i jorden och grifternas fångna silfverdufva, hvar dväljes hon?»</p><pb type="ZTS" n="121" />
+
+    <p xml:id="p129">»<hi rend="expanded">Här!</hi>» svarade åter samma dåfva röst.</p>
+
+    <p xml:id="p130">Förmodligen befanns detta svar emot beräkning, ty vargens drag förändrades plötsligen, och han tvärtystnade.</p>
+
+    <p xml:id="p131">Hastigt lemnade han sin plats och rusade framåt den adeliga griften, derifrån rösten hördes. Vid denna rörelse kullstöttes lampan, en flod af blått brinnande sprit utgöts öfver kyrkgolfvet, och blott dess svaga bleka sken spred ett knappt <anchor xml:id="start6382" />märkligt<anchor xml:id="end6382" /> skimmer i den kolmörka kyrkan.</p>
+
+    <p xml:id="p132">I den nejden af kyrkan, der grafven låg, tilldrog sig nu något rysligt. En gestalt hade uppsvingat sig ur det underjordiska hvilorummet och hejdade vargens steg, i det han lät skenet af en plötsligt aftäckt blindlykta falla på bedragarens förvirrade ansigte. </p>
+
+    <p xml:id="p133">»Bof!» utropade herr Lars – ty det var han – »ditt mått är rågadt och icke förgäfves har du anropat mörksens makter.»</p>
+
+    <p xml:id="p134">»Förbarmande! Nåd! Nåd!»</p>
+
+    <p xml:id="p135">»Förrädare! Hycklare! Helgerånare!»</p>
+
+    <p xml:id="p136">»Jaså, efter det så är, så <choice><orig>...</orig><reg resp="AT">...»</reg></choice></p>
+
+    <p xml:id="p137">Och med en lömskhet utan like sammandrog den senfulle mannen armarna och underlifvet samt framflyttade venstra foten, ej olikt en katt, som tar sats till ett mordiskt språng ...</p>
+
+    <p xml:id="p138"><reg>»...</reg> så sköt er nu sjelf!»</p>
+
+    <p xml:id="p139">Dessa ord voro icke väl utsagde, innan herr Lars, oberedd och föga öfvad slagskämpe, erhöll ett slag af så ytterlig våldsamhet, att han utan ett ljud störtade sanslös till golfvet.</p>
+
+    <p xml:id="p140">Hans fiende störtade genast öfver honom, undersökte fickorna med knät mot hans bröst och framdrog med triumferande uppsyn pistolerna och en plånbok, hvilken tyvärr befanns innehålla väl mycket annotationer, men in<pb type="orig" n="3" />tet penningar. En grym tanke uppstod nu i fältväbelns hufvud. Hastigt fattade han den afdånade adjunkten i benen och drog honom så fram till grafven för att nedstörta honom dit och sedan vältra stenen så fast deröfver, att den fångne, utan ett halft underverk, väl der fått dväljas till domedag.</p>
+
+    <p xml:id="p141">Ännu hejdar sig vargen ett ögonblick. Han har varseblifvit den afdånades fickur och tillegnar sig det.</p>
+
+    <p xml:id="p142">Uret knäpper i den djupa tystnaden. Vargen ser upp.</p>
+
+    <p xml:id="p143">Tätt invid honom på andra sidan grafven står en gestalt, som hotande utsträcker sin hand mot förbrytaren. Vargen framdrager en af de röfvade pistolerna och riktar den på fyra stegs afstånd mot gestalten.</p>
+
+    <p xml:id="p144">Gestalten står orörlig. Vargen skjuter.</p><pb type="ZTS" n="122" />
+
+    <p xml:id="p145">Blixten upplyser kyrkan. Knallen af skottet genljuder mot hvalfven. När röken skingrat sig, ser vargen upp.</p>
+
+    <p xml:id="p146">Gestalten står orörlig.</p>
+
+    <p xml:id="p147">I detsamma slocknar lyktan, otät för luftdraget.</p>
+
+    <p xml:id="p148">Ett starkt bultande höres på insidan af dörren till sakristian. Vargen, förvirrad och förmodande att man ville intränga i kyrkan för att gripa honom, gör ett häftigt språng framåt i mörkret och störtar våldsamt in i den öppna griften.</p>
+
+    <p xml:id="p149">Strax derpå hör man den tunga stenen nedfalla deröfver.</p>
+
+    <p xml:id="p150">Bultandet på sakristiedörren blir allt starkare.</p>
+
+    <p xml:id="p151">Lyktan tändes åter och man ser Salomon lutad öfver sin unge herre, bemödande sig att återkalla honom till lifvet.</p>
+
+    <p xml:id="p152">Slutligen lyckas det honom.</p>
+
+    <p xml:id="p153">»Hvar äro vi?» frågar förvirrad den vaknade.</p>
+
+    <p xml:id="p154">»På vargjagt, käre herre! Men nu fort upp, ni skall få veta allt sedan. Odjuret är fångadt i en varggrop så god som någon; men jag fruktar hans medhjelpare bryta sig in i kyrkan. Hör hur de bulta!»</p>
+
+    <p xml:id="p155">»Alla gastar anamme dig, varg!» ropas det inifrån sakristian. »Vet du då icke att tjocka jernbeslagna luckor <anchor xml:id="start6383" />förvara<anchor xml:id="end6383" /> fönstret här. Vi måste ut genom dörren, åsna!»</p>
+
+    <p xml:id="p156">»Såså, jag <reg>förstår»,</reg> säger Salomon. »Vargen ligger i gropen och korparna sitta fast på <anchor xml:id="start6384" />limstången<anchor xml:id="end6384" />. Välbekomme! Nu bort.»</p>
+
+    <p xml:id="p157">»Men, Salomon, pastorn <reg>...?»</reg></p>
+
+    <p xml:id="p158">»Aj det var sannt. Låtom oss se. Ah, der sitter den arme gubben halfdöd inkrupen i bänken. Käre vördige herre, följ oss.»</p>
+
+    <p xml:id="p159">Med en stel <anchor xml:id="start6385" />fånig<anchor xml:id="end6385" /> blick följde dem den arme bedragne kapellanen. Kyrkodörrarne igenlästes noga.</p>
+
+    <p xml:id="p160"><reg>»Men»,</reg> yttrade herr Lars medan han med tungt hufvud tillryggalade återvägen, »förklara mig, Salomon, hvad som tilldragit sig under min svimning.»</p>
+
+    <p xml:id="p161">»Hvad annat, käre herre, än att räfven fann sin spådom besannad. Vargen är intet barn att leka med. Inkrupen bakom kyrkodörren, såg jag till min förskräckelse ytterligare två män ingå i kyrkan utom de två, hvilka vi nyss följt i spåren. Jag lyssnar, jag hör besvärjelsen, jag smyger mig sakta in, jag hör er besvara vargens förmätna frågor, jag ser er möta honom med en enfaldig – ursäkta mig – med en riktigt dum godtrogenhet; jag ser er falla för hans lömska slag, jag darrar för ert lif, jag besluter att föreställa ett spöke, ty jag gissade att vargens inbillning var uppjagad af hans egna besvärjelser;<pb type="ZTS" n="123" /> det lyckas mig, han aflossar en pistol på mig, – lyckligtvis var det den som ni laddat med kork – jag känner korken slå så häftigt mot mitt bröst att jag nära nog fallit, men jag står; händelsevis slocknar lyktan, vargen hör bultandet, tror sig bli anfallen, rusar framåt och faller i grafven; strax vältrar jag stenen deröfver. Kort derpå återkom ni till sans.»</p>
+
+    <p xml:id="p162">»Bra gjordt, räf! vedergällningen skall ej uteblifva.»</p>
+
+    <milestone unit="part" when="1846-02-11" /><pb type="orig" n="2" />
+    <p xml:id="p163"><anchor xml:id="start6386" />Våren hade kommit<anchor xml:id="end6386" /> med all sin ljufhet. <anchor xml:id="start6387" />Majsolen hade sett med sina blida glänsande ögon på fjärdarna, vikarna, holmarna, stränderna, kullarna, dälderna, skogarna, svederna och fälten i <placeName corresp="pl814">Tavastland</placeName>. Den tiden hade <placeName corresp="pl1294"><choice><orig>Längelmä’nwesi</orig><reg resp="AT">Längelmänvesi</reg></choice></placeName> ännu ej utgjutit sitt klara vatten i den älskliga <placeName corresp="pl1897">Roini</placeName>; men frimodigt slog dess nyss lösgjorda bölja mot den höga sandvall, genom hvilken nu <placeName corresp="pl658">Kaivando</placeName> leder sin jemnade bädd. Och <anchor xml:id="start6388" /><placeName corresp="pl1792">Päjänä</placeName><anchor xml:id="end6388" />, den ensliga, mäktiga, furuomkransade, klappade mot sina höjdrika stränder med vårens vilda ungdomsmod, lik känslan i en otämd ynglings barm, och topparna på <placeName corresp="pl695">Kangasala ås</placeName> sågo stolta bort öfver de glimmande vattenspeglarne af <placeName corresp="pl1764">Pyhäjärvi</placeName>, den heliga sjön, och de gröna holmarna i <placeName corresp="pl1539">Näsijärvi</placeName>, medan <placeName corresp="pl2543">Vanajas</placeName> täcka fjärdar bildade glänsande rutor i den vida matta, som vandrarens ögonkast mäta från <placeName corresp="pl369">Hattelmala</placeName>. <placeName corresp="pl814">Tavastlands</placeName> mörka tycke, fördystradt af de täta svartgröna barrskogarna, hade ljusnat för vårsolens blick.<anchor xml:id="end6387" /> Glad och strålande var luften, lärkorna sjöngo i skyn, skogarna doftade af helsa och längst ned i backsluttningen sorlade drifvornas sista tårar, rinnande bort i små rännilar genom sanden och småstenarna till stranden af någon nära sjö.</p>
+
+    <p xml:id="p164">Det var en solklar söndagsquäll. Fjerran i det lilla kapellet såg man den gamla kyrkan med sitt branta spåntak och sina murar af ofantliga stenblock sticka bjert af mot den guldglimmande aftonhimlen. Nedanför höjden, der kyrkan låg, utbredde insjön sin blanka spegel och strändernas furor sågo med sitt tysta allvar ned i den. Herrskapet från prestgården hade gått ut att promenera, och då de båda gamla kände sig trötta, hade man satt sig att hvila på bänken under de två knotiga tallarna vid vestra kyrkdörren. Der såg man nu den gamle pastorn, slö och halfslocknad alltsedan den hemska natten i kyrkan, men mild att påse, likasom tillhörde han redan en annan verld. Invid honom satt hans gamla maka, böjd af år och sorger äfven hon, men med förklarade ögon betraktande <anchor id="pos7" />sin unga dotter och hennes sedan fyra veckor vigde man, den raske herr Lars, numera <anchor xml:id="start6389" />Substitut<anchor xml:id="end6389" /> i kapellet under gubbens afsigkommenhet. De sutto der, de unga vid de gamlas sida, såsom framtiden står tätt invid det förgångna, för att intaga dess plats och<pb type="ZTS" n="124" /> <anchor xml:id="start6390" />tillycka<anchor xml:id="end6390" /> dess döende ögon. De sågo lyckliga och lugna ut; fjerran hörde de bruset af lifvets vilda strid, men den nådde icke deras hjertans frid. Och när solen sjönk i vester och dess rödlätta strålar skimrade i den unga makans ögon, då sågo de båda lyckliga småleende på hvarandra och tackade i sina tankars sällhet Gud.</p>
+
+    <p xml:id="p165">Men uppför backen såg man nu den krye gubben Salomon klifva med raska steg. Numera utnämnd till kyrkoväktare i den under vintern döde invalidens ställe, var Salomon t. f. pastors högra hand och framlefde en glad och lycklig ålderdom.</p>
+
+    <p xml:id="p166">»Nere på vägen är någon, som vill tala med herr L – ursäkta så mycket, med unge herr pastorn, och kan pastorn gissa hvem det är? Jo hvem annan än vår gamla vän vargen sjelf.»</p>
+
+    <p xml:id="p167">»Gå för all del ej till den grymma menniskan!» bad den unga frun bevekligt sin man.</p>
+
+    <p xml:id="p168">»Lugna sig, kära <reg>fru»,</reg> tröstade Salomon. »Det vilddjuret är icke löst och ledigt nu som i höstas när herr Lars – Gud förlåte mig, jag kommer då aldrig ihåg – när unga pastorn och jag handskades med honom vid kyrktjufnaden. Den gången blef han likväl knäckt, måtro; jag mins huru ynkelig han var, när han andra morgonen tillika med sina värda kamrater framdrogs ur råttfällan och förpassades raka vägen till häktet i <anchor xml:id="start6391" /><placeName xml:lang="fin" corresp="pl2315">Hämeenlinna</placeName><anchor xml:id="end6391" />. Och fast han den gången rymde och sedan om vintern rånade i <placeName corresp="pl480">Hollola</placeName> och ihjälslog en karl på <placeName corresp="pl390">Heinola</placeName> marknad, så blef han ändtligen knipen i förrgår vid ett inbrott i <placeName corresp="pl1292">Längelmäki</placeName> och sitter nu väl <anchor xml:id="start6392" />jernad<anchor xml:id="end6392" /> i fångkärran dernere för att göra en lustfärd direkte till <anchor xml:id="start6393" /><placeName corresp="pl2233">Sveaborg</placeName><anchor xml:id="end6393" />.»</p>
+
+    <p xml:id="p169">»Men gå ej honom för nära, bästa Lars <reg>....»</reg></p>
+
+    <p xml:id="p170">»Var lugn min vän. Vargen bär nu nosgrimma. Och att betrakta brottet, är ofta lärorikare, än att betrakta sjelfva dygden.»</p>
+
+    <p xml:id="p171">Herr Lars gick och fann på vägen en fångkärra, <anchor xml:id="start6394" />belastad<anchor xml:id="end6394" /> med en i jern om medjan och bultar om handlofvarna fastsmidd missdådare, i hvars trotsiga grymma drag man vid första ögonkastet igenkände fältväbeln Kallinen, vargen. Om det långa samtal, som nu uppstod mellan herr Lars och denne förhärdade bof, vet man allenast, att presten i de mest bevekliga ordalag förmanat fången till ånger och bättring, men förgäfves. Och slutligen har vargen afbrutit förmaningarna helt <choice><orig>twärt</orig><reg resp="AT">tvärt.</reg></choice></p>
+
+    <p xml:id="p172">»Håll inne med edra <anchor xml:id="start6395" />trasiga<anchor xml:id="end6395" /> moraler,» har han sagt, »de studsa tillbaka från mitt bröst som vattendroppen från ett glödande jern. Hur ädelmodigt att ropa till den drunknande: hvarför höll du dig ej på det torra? eller: tag fast i molntoppen der, som seglar en half mil öfver dig upp i luften! Nej<pb type="ZTS" n="125" /> prest, lös jernen från min medja och förbannelsen från mitt hufvud och säg sedan: bättra dig! <anchor xml:id="start6396" />Den som är slagen till en slant<anchor xml:id="end6396" />, han ... ni förstår. Jag har ock varit god engång, fast det är mycket längesedan. Men ett kainsmärke var satt i mitt anlete; jag måste ju göra heder åt det öknamn, man gaf mig, åt den stämpel naturen påtryckt mig. O jag var en man för kriget ... jag mördade der för äran. Men för freden dugde jag platt icke. <anchor id="pos3" />Att dränka skrinnande gossar, att råna värnlöse resande, fy det var lumpet! Icke stort bättre bragd var att lura en slö gubbe på hans penningar och tända hans gård nattetid, för att genom farans afböjande tillisma mig hans förtroende. Det enda som anstod vargen, var kyrkorån, ty der var en blodlös, men förfärlig kamp att kämpa med nattens spöken och med samvetets. Men i den dödskalla griften, lefvande inmurad bland de murkna kistorna, bland benranglen och råttorna, hvad <anchor xml:id="start6397" />grundade<anchor xml:id="end6397" /> vargen uppå? Månne på ånger och änglafromhet?<pb type="orig" n="3" /> haha! I sitt sinne hvälfde han planer att bränna städer, att förgifta allmänna brunnar, att till hälften afsåga broar, att hugga lömska vakar på isvägarna, att tända falska fyrar vid kusterna i stormnätter, att antända sädesfälten, att ihjälknifva boskapshjordarna, att, om möjligt, föra pesten i <choice><orig>landet</orig><reg resp="AT">landet.</reg></choice> Och allt detta blott för det att menniskorna från barndomen utstött honom ur sin krets för hans ansigtes skull och för det ingen varelse på jorden sagt till honom: varg, det klappar dock ett menskligt hjerta i ditt bröst. Kom och blif vår broder, äfven du!»</p>
+
+    <p xml:id="p173">»Kyrkans sköte står dock alltid öppet för den ångerfulle.»</p>
+
+    <p xml:id="p174">»Hvad båtar det att säga åt den ihjälfrusne: kom, den varma brasan väntar dig! Vill du håna mig, prest? Vet då, att icke ohämnad förgås vargen. Kyrkobygnadsfonden, samlad i många år och utgörande öfver <reg>2 000</reg> riksdaler, stal en af mitt band från dig och din svärfar i onsdagsnatt. Akta dig för kontraktsprosten, min välärevördige vän! Innan veckans slut vill han hafva redovisning. Det var det jag ville säga dig. Jag önskar ett gladt möte. Farväl!»</p>
+
+    <p xml:id="p175">Och fångkärran rullade af söderut.</p>
+
+    <p xml:id="p176">Under detta samtal hade solen sänkt sig allt längre nedåt skogstopparna i vestnordvest. <anchor id="pos8" />Lena, den unga makan, satt med sina föräldrar på kullen och bidade mannens återkomst. Tankfull stötte hon med gamla pastorns käpp mot kyrkans grund. Sannolikt hade några stenar lossnat genom <anchor xml:id="start6398" />kälans<anchor xml:id="end6398" /> påskjutning, ty det behöfdes ej mer än dessa svaga stötar, för att komma ett litet stycke af grundvalen att lossna och rulla ned utför backsluttningen. Till sin förvåning märkte Lena bakom det ställe der stenen suttit icke kalk, sand och andra stenar, som man väl bordt förmoda, utan ett ihåligt rum. Nyfi<pb type="ZTS" n="126" />ken, som alla af sitt kön, tittade hon dit in, men så att dagern fick tillträde, och varseblef nu tydligt någonting som liknade hörnet af en jernbeslagen kista. I detsamma återkom herr Lars med långsama steg uppför kullen.</p>
+
+    <p xml:id="p177">Den unge mannens uppsyn var tankfull och betryckt. Han kunde ej tvifla uppå, att ju vargen talat sanning om kassastölden, då han kände summans belopp. En <anchor xml:id="start6399" />balans<anchor xml:id="end6399" /> af denna storlek måste ruinera huset och kasta en fläck på både Lars och <anchor id="pos9" />hans gamle svärfar, om hvars dåraktiga skattgräfveri ett dunkelt ryckte spridt sig i bygderna. Herr Lars såg bekymrad ut.</p>
+
+    <p xml:id="p178">Skrämd af hans mulna panna, mötte honom den unga frun. »Har vargen åter bitits?» frågade hon skyggt skämtande.</p>
+
+    <p xml:id="p179">»Han bets ännu i det sista, den olycklige.»</p>
+
+    <p xml:id="p180">»Du måste berätta mig det, icke så? Men innan du gör det, så kom förroskull och se hvad jag har funnit under kyrkomuren.»</p>
+
+    <p xml:id="p181">Förvånad undersökte herr Lars det tillfälliga hålet i grundvalen. Utan stor möda lossnade sten efter sten och en af Salomon hämtad jernstör var tillräcklig att blotta hela fördjupningen i muren, ur hvilken man nu framdrog en stor jernbeslagen kista, hvars lås, af rosten sönderfrätt, utan nyckel gick upp. Och se! här glimmade vid öppnandet silfver och guld, <anchor xml:id="start6400" />nipper<anchor xml:id="end6400" />, bordservicer, <anchor xml:id="start6401" />armstakar<anchor xml:id="end6401" />, kannor och mycket annat af dessa ädla metaller, vidare påsar med silfvermynt från <anchor xml:id="start6403" />de tre store Carlarnes<anchor xml:id="end6403" /> tider, tillochmed <persName role="fictional" corresp="pe906">Carl XII:s</persName> mynttecken, samt slutligen en med synbar brådska skrifven förteckning öfver ägarne till hvar och en af dessa dyrbarheter, bestämd att dokumentera deras rätt vid skattens återupptagande.</p>
+
+    <p xml:id="p182">Herr Lars genomögnade begrundande detta dokument.</p>
+
+    <p xml:id="p183">»Jag kan ej mera tvifla derpå,» sade han; »skatten är densama, om hvilken sagan talat, och som man gömde undan fienden i den stora ofredens tid. Så skickar det sig att en <anchor xml:id="start6404" />menlös<anchor xml:id="end6404" /> quinnohand upptäcker hvad männers och gubbars grubblande klokhet icke utgrundat. Af förteckningen ser jag att fulla hälften af denna skatt tillhört min svärfars farfar och således nu tillhör honom. Denna oförmodade rikedom skall skydda oss för vådan af ett farligt bofstreck. Resten af skatten skall återställas åt de förre ägarnes arfvingar. Och vilja de anslå alltsamans eller någon del till den nya kyrkans uppbyggande, så skola äfven vi lemna vår skärf.»</p>
+
+    <p xml:id="p184">Så talade herr Lars, den förståndige. Och hans unga maka log då gladt igen och de gamla sågo välsignande på dem när solen sjönk bakom skogen.</p>
+
+</div>
+</body>
+  </text>
+</TEI>
