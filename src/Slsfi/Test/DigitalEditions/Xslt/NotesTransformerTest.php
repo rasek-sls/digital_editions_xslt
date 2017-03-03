@@ -1,21 +1,17 @@
 <?php
 namespace Slsfi\Test\DigitalEditions\Xslt;
 
-use Slsfi\DigitalEditions\Xslt\CommentariesTransformer;
+use Slsfi\DigitalEditions\Xslt\NotesTransformer;
 
-class CommentariesTransformerTest extends \PHPUnit_Framework_TestCase
+class NotesTransformerTest extends \PHPUnit_Framework_TestCase
 {
-    public function testTrueIsTrue()
-    {
-        $foo = true;
-        $this->assertTrue($foo);
-    }
+
 
     public function testConstruction_validFilePath_shouldCreteObject() {
-        $xmlPath = __DIR__ . "/../../../Test/DigitalEditions/Xslt/xml-files/com/15_677_com.xml";
-        $object = new CommentariesTransformer($xmlPath);
+        $xmlPath = __DIR__ . "/../../../Test/DigitalEditions/Xslt/xml-files/com/1_1_com.xml";
+        $object = new NotesTransformer($xmlPath);
 
-        $this->assertInstanceOf(CommentariesTransformer::class, $object);
+        $this->assertInstanceOf(NotesTransformer::class, $object);
     }
 
     /**
@@ -24,7 +20,7 @@ class CommentariesTransformerTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstruction_inValidFilePath_shouldCreteObject() {
         $xmlPath = "";
-        $object = new CommentariesTransformer($xmlPath);
+        $object = new NotesTransformer($xmlPath);
     }
 
     /**
@@ -32,7 +28,7 @@ class CommentariesTransformerTest extends \PHPUnit_Framework_TestCase
      * @expectedExceptionMessage XML File not found
      */
     public function testConstruction_nullFilePath_shouldCreteObject() {
-        $object = new CommentariesTransformer(null);
+        $object = new NotesTransformer(null);
     }
 
 
@@ -40,27 +36,24 @@ class CommentariesTransformerTest extends \PHPUnit_Framework_TestCase
 
         $xmlPath = __DIR__ . "/xml-files/com/1_1_com.xml";
         $estPath = __DIR__ . "/xml-files/est/1_1_est.xml";
-        $object = new CommentariesTransformer($xmlPath);
+        $object = new NotesTransformer($xmlPath);
 
         $generalCommentContent = 'Kommentar till FOO';
         $noteCommentContent = ' tröst ej nära?';
 
-
         $params = [
-           //     "sectionId" => "en5696",
+                "noteId" => "en350",
                 "bookId" => "1",
                 "fileDiv" => "0",
                 "commentTitle" => "FOO",
                 "estDocument" => "file://" . $estPath];
-        
-        $generalComment = $object->getHTML($params, true);
 
 
-        $this->assertContains($generalCommentContent, $generalComment);
-        $this->assertNotContains($noteCommentContent, $generalComment);
-     
+        $noteComments = $object->getHTML($params, true);
 
-
+        $this->assertContains($noteCommentContent, $noteComments);
+        $this->assertNotContains($generalCommentContent, $noteComments);
+  
     }
 
 }
