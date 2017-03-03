@@ -79,6 +79,114 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
   </xsl:template>
 
 
+  <xsl:template match="tei:seg">
+    <xsl:if test="not(@type='noteSection')">
+      <span>
+        <xsl:variable name="notePosition">
+          <xsl:choose>
+            <xsl:when test="@type='notePosition'">
+              <xsl:call-template name="printNotePosition">
+                <xsl:with-param name="notePos" select="." />
+              </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise/>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:if test="@type">
+          <xsl:attribute name="class">
+            <xsl:value-of select="@type"/>
+            <xsl:if test="string-length($notePosition)&gt;0">
+              <xsl:text> pk</xsl:text>
+              <xsl:value-of select="$notePosition"/>
+              <!--<xsl:choose>
+                <xsl:when test="contains($notePosition, '–')">
+                  <xsl:value-of select="substring-before($notePosition, '–')"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="$notePosition"/>
+                </xsl:otherwise>
+              </xsl:choose>-->
+            </xsl:if>
+          </xsl:attribute >
+        </xsl:if>
+        <xsl:choose>
+          <xsl:when test="@type='notePosition'">
+            <xsl:value-of select="$notePosition"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:apply-templates/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </span>
+    </xsl:if>
+  </xsl:template>
+
+  <xsl:template name="printNotePosition">
+    <xsl:param name="notePos"/>
+    <xsl:variable name="sTo" select="substring-after($notePos, '–')" />
+    <xsl:choose>
+      
+      <xsl:when test="$sTo != ''">
+        <xsl:variable name="sFrom" select="substring-before($notePos, '–')" />
+        <xsl:variable name="sP1" select="substring-after($sFrom, '_')" />
+        <xsl:variable name="sP2" select="substring-after($sTo, '_')" />
+        <xsl:choose>
+          <xsl:when test="$sP1 != ''">
+            <xsl:value-of select="$sP1"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:choose>
+              <xsl:when test="$sFrom='Titel' or $sFrom='Datering' or $sFrom='Fotnot'">
+                <xsl:value-of select="$sFrom"/>
+              </xsl:when>
+              <xsl:when test="contains($sFrom, 'lg') or contains($sFrom, 'li')">
+                <xsl:value-of select="substring($sFrom, 3)"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="substring($sFrom, 2)"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:otherwise>
+        </xsl:choose>
+        <xsl:text>–</xsl:text>
+        <xsl:choose>
+          <xsl:when test="$sP2 != ''">
+            <xsl:value-of select="$sP2"/>
+          </xsl:when>
+          <xsl:when test="contains($sTo, 'lg') or contains($sTo, 'li')">
+            <xsl:value-of select="substring($sTo, 3)"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:value-of select="substring($sTo, 2)"/>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:when>
+      
+      <xsl:otherwise>
+        <xsl:variable name="sP" select="substring-after($notePos, '_')" />
+        <xsl:choose>
+          <xsl:when test="$sP != ''">
+            <xsl:value-of select="$sP"/>
+          </xsl:when>
+          <xsl:otherwise>
+            <xsl:choose>
+              <xsl:when test="$notePos='Titel' or $notePos='Datering' or $notePos='Fotnot'">
+                <xsl:value-of select="$notePos"/>
+              </xsl:when>
+              <xsl:when test="contains($notePos, 'lg') or contains($notePos, 'li')">
+                <xsl:value-of select="substring($notePos, 3)"/>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="substring($notePos, 2)"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:otherwise>
+        </xsl:choose>
+      </xsl:otherwise>
+      
+    </xsl:choose>
+  </xsl:template>
+
 
   <xsl:template match="tei:div">
     <xsl:choose>

@@ -50,7 +50,6 @@ class NotesTransformerTest extends \PHPUnit_Framework_TestCase
 
 
         $noteComments = $object->getHTML($params, true);
-
         $this->assertContains($noteCommentContent, $noteComments);
         $this->assertNotContains($generalCommentContent, $noteComments);
   
