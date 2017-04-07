@@ -1149,10 +1149,17 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
 	</xsl:template>
 
   <xsl:template match="tei:graphic">
-    <img style="max-width:100%;max-height:auto;">
+    <img align="left">
       <xsl:attribute name="src">
         <xsl:text>bilder/verk/</xsl:text>
         <xsl:value-of select="@url"/>
+      </xsl:attribute>
+	  <xsl:attribute name="class">
+        <xsl:text>est_figure_graphic</xsl:text>
+		<xsl:if test="@align != ''">
+			<xsl:text>_</xsl:text>
+		</xsl:if>
+        <xsl:value-of select="@align"/>
       </xsl:attribute>
     </img>
   </xsl:template>
