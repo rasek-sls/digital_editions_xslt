@@ -199,25 +199,6 @@ Rights to use and further develop given to Svenska litteratursällskapet i Finla
       </a>
     </xsl:for-each>
   </xsl:template>
-  
-  <xsl:template match="tei:figure">
-    <xsl:apply-templates/>
-  </xsl:template>
-
-  <xsl:template match="tei:graphic">
-    <img>
-      <xsl:if test="parent::tei:figure/@rend">
-        <xsl:attribute name="class">
-          <xsl:text>img_</xsl:text>
-          <xsl:value-of select="parent::tei:figure/@rend"/>
-        </xsl:attribute>
-      </xsl:if>
-      <xsl:attribute name="src">
-        <xsl:text>bilder/verk/</xsl:text>
-        <xsl:value-of select="@url"/>
-      </xsl:attribute>
-    </img>
-  </xsl:template>
 
   <xsl:template match="tei:app">
       <span>
